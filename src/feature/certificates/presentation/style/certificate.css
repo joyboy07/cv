@@ -20,9 +20,36 @@
 	align-items: center;
 	justify-items: center;
 }
+.certificate-widget img{
+	background-size: cover;
+	height: 100px;
+	width: 100px;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+}
+.certificate-widget img{
+	background-size: cover;
+	height: 100px;
+	width: 100px;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+}
+.certificate-widget Button svg{
+	width: 70px;
+	height: 70px;
+	background-size: auto;
+	border: 0;
+	color: #ccc;
+
+}
 .elemt{
-	grid-column: 2/6;
+	grid-column: 2/7;
 	grid-row: 1;
+}
+.elemt li{
+	list-style: none;
 }
 .elemt p{
 	margin: 0;

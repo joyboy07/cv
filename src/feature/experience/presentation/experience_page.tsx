@@ -2,16 +2,16 @@ import './style/experience.css'
 import { useHistory } from "react-router-dom";
 import { Button } from '@material-ui/core';
 import ExperienceWidget from './widgts/experience-widget'
+import DataExperience from './../data/local/experience_data_local'
 
+let dataExperience = new DataExperience()
 const ExperiencePage =() => {
 	return (
 	<div className="experience-page">
 		<div className='cont'>
 			<GoBack/>
 			<Title/>
-			<ExperienceWidget/>
-			<ExperienceWidget/>
-			<ExperienceWidget/>
+			<Experience/>
 		</div>
 	</div>
 	)
@@ -33,4 +33,17 @@ const Title =() => {
 	</div>
 }
 
+const Experience =() => {
+	return(
+		<div>
+			{
+				dataExperience.getCertificagtes().map(function(expereince, index){
+					return(
+						<ExperienceWidget key={index} name={expereince.name} ruc={expereince.ruc} years={expereince.years} cargo={expereince.cargo} url={expereince.url} />
+					)
+				})
+			}
+		</div>
+	)
+}
 export default ExperiencePage

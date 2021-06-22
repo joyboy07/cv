@@ -1,20 +1,24 @@
-
-import { Button } from '@material-ui/core';
-import { useHistory } from 'react-router-dom';
 import './style/briefcase.css'
-import BriefcaseWidget from './widgets/briefcase-widget'
+import { useHistory } from "react-router-dom";
+import { Button } from '@material-ui/core';
+import Briefcase from './widgts/briefcase-widget'
+import DataBreafcase from './../data/local/briefcase_data_local'
+import IBriefcase from '../entities/briefcase_entity';
 
-const BriefcasePage =() => {
+let dataBreafcase = new DataBreafcase()
+
+const ExperiencePage =() => {
 	return (
-	<div className='briefcase-page'>
-		<div className='cont' >
+	<div className="experience-page">
+		<div className='cont'>
 			<GoBack/>
 			<Title/>
-			<BriefcaseWidget/>
+			<Briefcases/>
 		</div>
 	</div>
 	)
 }
+
 const GoBack =() => {
 	let history = useHistory();
 	function goBack() {
@@ -27,8 +31,21 @@ const GoBack =() => {
 
 const Title =() => {
 	return <div className ='title'>
-		<h1 style={{marginBottom:'10px'}}>Portafolio</h1>
+		<h1 style={{marginBottom:'10px'}}>Experience</h1>
 	</div>
 }
+const Briefcases =() => {
+	return (
+		<div>
+			{
+				dataBreafcase.getCertificagtes().map((breafcase:IBriefcase, index) => {
+					return(
+						<Briefcase key={index} prams= {breafcase}/>
+					)
+				},this)
+			}
+		</div>
+	)
+}
 
-export default BriefcasePage
+export default ExperiencePage

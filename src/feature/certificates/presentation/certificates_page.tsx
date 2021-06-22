@@ -2,6 +2,9 @@ import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import './style/certificate.css'
 import CertificateWidget from './widgets/certificate-widget'
+import DataCertificates from './../data/local/certificate_data_local'
+
+let dataCertificates = new DataCertificates()
 
 const CertificatesPage =() => {
 	return (
@@ -9,9 +12,7 @@ const CertificatesPage =() => {
 		<div className='cont'>
 				<GoBack/>
 				<Title/>
-				<CertificateWidget/>
-				<CertificateWidget/>
-				<CertificateWidget/>
+				<Certificates/>
 		</div>
 	</div>
 	)
@@ -29,6 +30,17 @@ const GoBack =() => {
 const Title =() => {
 	return <div className ='title'>
 		<h1 style={{marginBottom:'10px'}}>Certificados</h1>
+	</div>
+}
+const Certificates =() => {
+	return <div>
+		{
+			dataCertificates.getCertificagtes().map(function(certificates, index){
+				return(
+					<CertificateWidget key={index} logo={certificates.logo} institute={certificates.institute} years={certificates.years} url={certificates.url}/>
+				)
+			},this)
+		}
 	</div>
 }
 

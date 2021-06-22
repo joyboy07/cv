@@ -8,6 +8,7 @@ const Skills =(params:any) => {
 		background: linear-gradient(50deg, #1fe6ff, #673ab7);
 		width: ${params.width};
 		animation: ${params.title} 4s;
+		text-align: center;
 		@keyframes ${params.title}{
 			0%{
 				width: 0%;
@@ -19,8 +20,8 @@ const Skills =(params:any) => {
 	`
 	return (
 		<li>
-			<h3>{params.title}</h3>
-			<span className='bar'><SpanProgresid ></SpanProgresid></span>
+			<h4>{params.title}</h4>
+			<span className='bar'><SpanProgresid ><p>{params.width}</p></SpanProgresid></span>
 		</li>
 	)
 }
