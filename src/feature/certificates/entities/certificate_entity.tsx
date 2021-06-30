@@ -1,9 +1,9 @@
 interface Icertificate{
 	id:number
-	logo?:string
 	institute?:string
 	years?:string
 	url?:string
+	urlImge?:string
 }
 
 export default Icertificate

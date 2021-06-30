@@ -37,7 +37,7 @@ const Certificates =() => {
 		{
 			dataCertificates.getCertificagtes().map(function(certificates, index){
 				return(
-					<CertificateWidget key={index} logo={certificates.logo} institute={certificates.institute} years={certificates.years} url={certificates.url}/>
+					<CertificateWidget key={index} pros={certificates} institute={certificates.institute} years={certificates.years} url={certificates.url}/>
 				)
 			},this)
 		}
