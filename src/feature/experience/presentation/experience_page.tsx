@@ -1,8 +1,8 @@
 import './style/experience.css'
-import { useHistory } from "react-router-dom";
-import { Button } from '@material-ui/core';
 import ExperienceWidget from './widgts/experience-widget'
 import DataExperience from './../data/local/experience_data_local'
+import GoBack from './../../../app/component/go-back'
+import Title from './../../../app/component/title'
 
 let dataExperience = new DataExperience()
 const ExperiencePage =() => {
@@ -10,29 +10,12 @@ const ExperiencePage =() => {
 	<div className="experience-page">
 		<div className='cont'>
 			<GoBack/>
-			<Title/>
+			<Title name='Experiencia'/>
 			<Experience/>
 		</div>
 	</div>
 	)
 }
-
-const GoBack =() => {
-	let history = useHistory();
-	function goBack() {
-		history.push("/");
-	}
-	return <div style={{paddingTop:'70px', paddingBottom:'30px'}}>
-		<Button variant="outlined" style={{color:'#ccc', borderColor:'#ccc', borderRadius:'0'}} onClick={goBack} > Volver </Button>
-	</div>
-}
-
-const Title =() => {
-	return <div className ='title'>
-		<h1 style={{marginBottom:'10px'}}>Experience</h1>
-	</div>
-}
-
 const Experience =() => {
 	return(
 		<div>

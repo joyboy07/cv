@@ -6,12 +6,9 @@
 	width: 70%;
 }
 .certificate-widget{
-	display: grid;
-	grid-template-columns: repeat(7,1fr);
-	grid-gap: 30px;
+	display: flex;
 	padding-top: 20px;
-	text-align: center;
-	align-items: center;
+	justify-content: space-between;
 	color: #ccc;
 }
 .certificate-widget div{
@@ -24,17 +21,6 @@
 	background-size: cover;
 	height: 100px;
 	width: 100px;
-	display: grid;
-	align-items: center;
-	justify-items: center;
-}
-.certificate-widget img{
-	background-size: cover;
-	height: 100px;
-	width: 100px;
-	display: grid;
-	align-items: center;
-	justify-items: center;
 }
 .certificate-widget Button svg{
 	width: 70px;
@@ -42,11 +28,10 @@
 	background-size: auto;
 	border: 0;
 	color: #ccc;
-
 }
 .elemt{
-	grid-column: 2/7;
-	grid-row: 1;
+	padding: 10px;
+	width: 70%;
 }
 .elemt li{
 	list-style: none;
@@ -60,4 +45,27 @@
 .border{
 	border-radius: 4px;
 	border: 1px solid #CCC;
+}
+.img-logo{
+	width: 100%;
+	height: 100%;
+}
+@media (max-width: 600px) {
+	.certificates-page .cont{
+		width: 90%;
+	}
+	.certificate-widget img{
+		display: none;
+	}
+	.certificate-widget Button svg{
+		width: 30px;
+		height: 30px;
+	}
+	.elemt p{
+		font-size: 10px;
+	}
+	.certificate-widget Button{
+		padding: 0;
+		margin: 0;
+	}
 }

@@ -10,14 +10,11 @@ const CertificateWidget =(params:any) => {
 		background-size: cover;
 		background-color: #fff;
 		border-radius: 10px;
-		width: 100%;
-		height: 100%;
-		border: none
-
+		border: none;
 	`
 	return (
 		<div className='certificate-widget'>
-			<ImgLogo/>
+			<ImgLogo className='img-logo'/>
 			<div className='elemt border'>
 				<li>
 					<p>{data.institute}</p>

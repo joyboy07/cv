@@ -60,4 +60,21 @@
 	color: #CCC;
 	margin: 10px;
 }
+@media (max-width: 600px) {
+	.experience-page .cont{
+		width: 90%;
+	}
+	.item-title h1{
+		font-size: 12px;
+	}
+	.item-title h3{
+		font-size: 12px;
+	}
+	.description p{
+		font-size: 10px;
+	}
+	.btn a{
+		font-size: 8px;
+	}
+}
 

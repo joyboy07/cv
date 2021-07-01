@@ -1,8 +1,8 @@
-import { Button } from '@material-ui/core';
-import { useHistory } from 'react-router-dom';
 import './style/certificate.css'
 import CertificateWidget from './widgets/certificate-widget'
 import DataCertificates from './../data/local/certificate_data_local'
+import GoBack from './../../../app/component/go-back'
+import Title from './../../../app/component/title'
 
 let dataCertificates = new DataCertificates()
 
@@ -11,26 +11,11 @@ const CertificatesPage =() => {
 	<div className='certificates-page'>
 		<div className='cont'>
 				<GoBack/>
-				<Title/>
+				<Title name='Certificados'/>
 				<Certificates/>
 		</div>
 	</div>
 	)
-}
-const GoBack =() => {
-	let history = useHistory();
-	function goBack() {
-		history.push("/");
-	}
-	return <div style={{paddingTop:'70px', paddingBottom:'30px'}}>
-		<Button variant="outlined" style={{color:'#ccc', borderColor:'#ccc', borderRadius:'0'}} onClick={goBack} > Volver </Button>
-	</div>
-}
-
-const Title =() => {
-	return <div className ='title'>
-		<h1 style={{marginBottom:'10px'}}>Certificados</h1>
-	</div>
 }
 const Certificates =() => {
 	return <div>
@@ -43,6 +28,4 @@ const Certificates =() => {
 		}
 	</div>
 }
-
-
 export default CertificatesPage
