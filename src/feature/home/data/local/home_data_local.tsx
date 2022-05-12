@@ -1,3 +1,4 @@
+import IEducation from '../../entities/education_Interface';
 import Iskills from './../../entities/skill_entity';
 
 class HomeDataLocal{
@@ -21,6 +22,12 @@ class HomeDataLocal{
 			{id:5,name:'figma', progress:'65%'},
 		];
 		return product
+	}
+	EducationAll(){
+		let education:IEducation[] = [
+			{id:1,date:'2015 - 2020', centro:'Ingenieria informatica', edication:'Universidad nacional jose faustino sanchez carrion'},
+		];
+		return education
 	}
 }
 export default HomeDataLocal

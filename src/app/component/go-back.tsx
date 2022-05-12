@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 const GoBack =() => {
 	let history = useHistory();
 	function goBack() {
-		history.push("/cv/");
+		history.push("/");
 	}
 	return <div style={{paddingTop:'70px', paddingBottom:'30px'}}>
 		<Button variant="outlined" style={{color:'#ccc', borderColor:'#ccc', borderRadius:'0'}} onClick={goBack} > Volver </Button>

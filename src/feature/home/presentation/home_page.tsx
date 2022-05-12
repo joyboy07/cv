@@ -1,36 +1,96 @@
-import './style/home.css'
 import { Button } from '@material-ui/core'
 import { useHistory } from 'react-router-dom'
+import styled from 'styled-components'
+import IEducation from '../entities/education_Interface'
+import Iskills from '../entities/skill_entity'
+import xd from './../data/local/home_data_local'
+import './style/home.css'
 import EducationWidget from './widget/education-widget'
 import Skill from './widget/skil-widget'
-import xd from './../data/local/home_data_local'
-import Iskills from '../entities/skill_entity'
 
 let xdp = new xd()
-
-const homePage =() => {
+const HomePage =() => {
 	return (
-		<div className = 'home-page' >
-			<ImgUser/>
-			<br />
-			<Buttons/>
-			<br />
-			<div className ='child'>
-				<Education/>
-				<Skills/>
-			</div>
-		</div>
+		<h1>hoi</h1>
+		// <div className = 'home-page' >
+		// 	<ImgUser/>
+		// 	<br />
+		// 	<Buttons/>
+		// 	<br />
+		// 	<div className ='child'>
+		// 		<Education/>
+		// 		<Skills/>
+		// 	</div>
+		// 	<Juegos>
+		// 		<h2>02</h2>
+		// 	</Juegos>
+		// </div>
 	)
 }
+export const Juegos = styled.div`
+	background: #1c1;
+	width: 300px;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+	border-radius: 20px;
+	::before{
+		content: '';
+		position: absolute;
+		width: 150px;
+		height: 140%;
+		background: linear-gradient(#00ccff, #d400d4);
+		animation: animate 4s linear infinite;
+	}
+	::after{
+		content: '';
+		position: absolute;
+		inset: 4px;
+		background: #1c1;
+		border-radius: 16px;
+	}
+	h2{
+		position: relative;
+		color: #fff;
+		font-size: 10em;
+		z-index: 10;
+
+	}
+	
+	@keyframes animate{
+		0%{
+			transform: rotate(0deg);
+		}
+		100%{
+			transform: rotate(360deg);
+		}
+	}
+
+`
 
 const ImgUser = () => {
+	let history = useHistory();
+	function goBack( name:String ) {
+		console.log('entre')
+		const win:any = window.open("/cvPdf", "_blank");
+		win.focus();
+
+		// history.push( `${name}`);
+	}
 	return <div className = 'user'>
 		<div className='photo' >
 			<div />
 		</div>
 		<div className = 'info'>
 			<h4> Desarrollador front-end</h4>
-			<h1> Julio Porlles Pardo </h1>
+			<div>
+				<h1> Julio Porlles Pardo </h1>
+				{/* <Button > Descargar CV</Button> */}
+				<Button > <a onClick={() => goBack('/cvPdf')} >Descargar CV</a></Button>
+			</div>
 			<p > Egresado de Ingeniería Informática con más de 1 año de experiencia. Proactivo, responsable, organizado y dinámico. Experiencia trabajando en equipo y ex-miembro de la comunidad estudiantil UNJFSC. </p>
 		</div>
 	</div>
@@ -38,7 +98,6 @@ const ImgUser = () => {
 const Buttons =() => {
 	let history = useHistory();
 	function goBack( name:String ) {
-		console.log(name);
 		history.push( `${name}`);
 	}
 	return <div className='buttons'>
@@ -51,16 +110,19 @@ const Buttons =() => {
 const Education =() => {
 	return <div >
 		<h3 style={{color:"White"}}>EDUCATION</h3>
-		<EducationWidget
-			fromTo="2015 - 2020"
-			institute="Universidad nacional jose faustino sanchez carrion"
-			career="Ingenieria informatica"
-		/>
-		<EducationWidget
-			fromTo="2015 - 2020"
-			institute="Universidad nacional jose faustino sanchez carrion"
-			career="Ingenieria informatica"
-		/>
+		<div>
+			{
+				xdp.EducationAll().map(function(params:IEducation, index) {
+					return(
+						<EducationWidget key={index}
+							fromTo={params.date}
+							institute={params.edication}
+							career={params.centro}
+						/>
+					)
+				},this)
+			}
+		</div>
 	</div>
 }
 
@@ -81,4 +143,4 @@ const Skills =() => {
 	</div>
 }
 
-export default homePage
+export default HomePage
