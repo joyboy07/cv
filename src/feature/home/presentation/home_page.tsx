@@ -1,34 +1,58 @@
 import { Button } from '@material-ui/core'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
-import IEducation from '../entities/education_Interface'
-import Iskills from '../entities/skill_entity'
-import xd from './../data/local/home_data_local'
+import { colorPrimary, colorWhite } from '../../../core/theme/color'
 import './style/home.css'
-import EducationWidget from './widget/education-widget'
-import Skill from './widget/skil-widget'
 
-let xdp = new xd()
 const HomePage =() => {
 	return (
-		<h1>hoi</h1>
-		// <div className = 'home-page' >
-		// 	<ImgUser/>
-		// 	<br />
-		// 	<Buttons/>
-		// 	<br />
-		// 	<div className ='child'>
-		// 		<Education/>
-		// 		<Skills/>
-		// 	</div>
-		// 	<Juegos>
-		// 		<h2>02</h2>
-		// 	</Juegos>
-		// </div>
+		<HomeCont>
+			<section>
+				<h1>Hello, mi name is  <span>julio porlles</span></h1>
+				<h1>I'm a <span>Desarrollador full stack</span></h1>
+				<h1>I'm a web Desing with extensive experiencie for over 10 years. My expertise is to create and website, desing, graphic desing, and many more... </h1>
+				<button>More About Me</button>
+			</section>
+			<section></section>
+		</HomeCont>
 	)
 }
+export const HomeCont = styled.div`
+	width: 70%;
+	display: flex;
+	section:nth-child(1){
+		height:100%;
+		width: 60%;
+		display:flex;
+		flex-direction: column;
+		justify-content: center;
+		gap:12px ;
+		margin-left: 40px ;
+		color: ${colorWhite};
+		button{
+			margin-top: 60px ;
+			width: 180px ;
+			font-size: 17px;
+			background: ${colorPrimary};
+			border-radius: 20px ;
+			padding: 10px 0px;
+		}
+		h1{
+			font-size:30px ;
+			span{
+				color: ${colorPrimary};
+			}
+		}
+	}
+	section:nth-child(2){
+		/* background: #c11; */
+		width: 40%;
+		height:100%;
+	}
+
+
+`
 export const Juegos = styled.div`
-	background: #1c1;
 	width: 300px;
 	height: 400px;
 	display: flex;
@@ -107,40 +131,40 @@ const Buttons =() => {
 	</div>
 }
 
-const Education =() => {
-	return <div >
-		<h3 style={{color:"White"}}>EDUCATION</h3>
-		<div>
-			{
-				xdp.EducationAll().map(function(params:IEducation, index) {
-					return(
-						<EducationWidget key={index}
-							fromTo={params.date}
-							institute={params.edication}
-							career={params.centro}
-						/>
-					)
-				},this)
-			}
-		</div>
-	</div>
-}
+// const Education =() => {
+// 	return <div >
+// 		<h3 style={{color:"White"}}>EDUCATION</h3>
+// 		<div>
+// 			{
+// 				xdp.EducationAll().map(function(params:IEducation, index) {
+// 					return(
+// 						<EducationWidget key={index}
+// 							fromTo={params.date}
+// 							institute={params.edication}
+// 							career={params.centro}
+// 						/>
+// 					)
+// 				},this)
+// 			}
+// 		</div>
+// 	</div>
+// }
 
-const Skills =() => {
-	return <div>
-		<div className='title-skill'>
-			<h3>HABILIDADES</h3>
-			<div>
-				{
-					xdp.fintLAll().map(function( xd:Iskills, index){
-						return(
-							<Skill key={index} title={xd.name}  width={xd.progress}/>
-						)
-					}, this)
-				}
-			</div>
-		</div>
-	</div>
-}
+// const Skills =() => {
+// 	return <div>
+// 		<div className='title-skill'>
+// 			<h3>HABILIDADES</h3>
+// 			<div>
+// 				{
+// 					xdp.fintLAll().map(function( xd:Iskills, index){
+// 						return(
+// 							<Skill key={index} title={xd.name}  width={xd.progress}/>
+// 						)
+// 					}, this)
+// 				}
+// 			</div>
+// 		</div>
+// 	</div>
+// }
 
 export default HomePage
