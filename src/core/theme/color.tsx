@@ -2,6 +2,8 @@
 //? color proyect
 
 export const colorPrimary = '#0A52BF'
+export const colorSecon = '#1565c0'
+export const colorTers = '#0d47a1'
 export const colorSecondary = '#676754'
 
 export const colorMenu = '#222222'
