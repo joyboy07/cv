@@ -1,3 +1,5 @@
+import { collection, getDocs } from "firebase/firestore";
+import db from '../../../../db/firebase';
 import IEducation from '../../entities/education_Interface';
 import Iskills from '../../entities/skill_entity';
 
@@ -31,3 +33,7 @@ class HomeDataLocal{
 	}
 }
 export default HomeDataLocal
+
+export function getCampusRemote(idSucursal:any) {
+	return getDocs( collection( db, 'info' ));
+}

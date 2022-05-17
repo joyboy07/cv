@@ -1,26 +1,39 @@
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import Lineas from '../../../app/component/lineas'
 import { colorIntermedio, colorMenu, colorWhite } from '../../../core/theme/color'
 import EducationCard from './components/education-card'
 import ExperienceCard from './components/experience-card'
 import './style/home.css'
 
 const AboutPage =() => {
+	const [age, setAge] = useState<number>();
+	useEffect(() => {
+		// console.log(new Date().getMonth() + 1 )
+		if(new Date().getMonth() + 1 >= 5){
+			setAge(new Date().getFullYear() - 1996)
+		}else{
+			setAge((new Date().getFullYear() - 1996) - 1)
+		}
+	},)
+
 	return (
 		<AboutCont>
-			<h1>About Me</h1>
-			<h1>i'm sajid ali and web developer</h1>
+			<h1>Sobre Mi</h1>
+			<Lineas></Lineas>
+			<h1>Hola mi nombre es julio y soy Desarrollador full stack jr</h1>
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat itaque, tempore dolorum repellendus assumenda accusantium minus nam eveniet ipsum unde harum, voluptatem culpa? Aliquid obcaecati, repellat dolorum nihil eaque ratione?</p>
 			<DataPersonal>
 				<ul>
-					<li><span>Birthday:</span> 2 mayo 1999</li>
-					<li><span>linkeding:</span> 2 mayo 1999</li>
-					<li><span>degre:</span> 2 mayo 1999</li>
-					<li><span>City:</span> rowardpine</li>
+					<li><span>Fecha de nacimiento:</span> 11 mayo 1996</li>
+					<li><span>Direccion:</span> Peru - Lima - huaura - huacho </li>
+					<li><span>Linkeding:</span>  <a href="https://www.linkedin.com/in/julio-porlles-pardo/">https://www.linkedin.com/in/julio-porlles-pardo/</a></li>
+					<li><span>Pasa tiempo :</span> Sallir con amigos</li>
 				</ul>
 				<ul>
-					<li><span>age:</span> 26 </li>
+					<li><span>Edad:</span> {age} </li>
+					<li><span>Movil:</span> 970578887</li>
 					<li><span>email:</span> julio.porlles.pardo@gmail.com</li>
-					<li><span>Phone:</span> 2 mayo 1999</li>
 					<li><span>Frelancer:</span> Disponible</li>
 				</ul>
 
@@ -43,7 +56,7 @@ const AboutPage =() => {
 }
 const AboutCont = styled.div`
 	width: 77%;
-	margin: 0px 25px 0px 45px ;
+	margin: 25px 25px 0px 45px ;
 	color: ${colorWhite};
 `
 const DataPersonal = styled.div`

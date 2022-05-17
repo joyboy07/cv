@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Lineas from '../../../app/component/lineas'
 import { colorWhite } from '../../../core/theme/color'
 import ServiceCard from './components/service-card'
 import './style/home.css'
@@ -6,6 +7,8 @@ import './style/home.css'
 const ServicePage =() => {
 	return (
 		<ServiceCont>
+				<h1>Servicios</h1>
+				<Lineas></Lineas>
 				<ServiceCard></ServiceCard>
 		</ServiceCont>
 	)

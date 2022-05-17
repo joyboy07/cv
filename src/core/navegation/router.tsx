@@ -6,7 +6,7 @@ import Error404 from "../../app/layout/error_404";
 import AboutPage from "../../feature/about/presentation/about_page";
 import ContactPage from "../../feature/contact/presentation/contact_page";
 import HomePage from "../../feature/home/presentation/home_page";
-import PortafolioPage from "../../feature/portafolio/presentation/service_page";
+import PortafolioPage from "../../feature/portafolio/presentation/portafolio_page";
 import ServicePage from "../../feature/service/presentation/service_page";
 import { colorBackgroud } from "../theme/color";
 import MenuComponet from "./menu_component";

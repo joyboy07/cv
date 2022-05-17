@@ -5,9 +5,7 @@ import { useState } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 import styled from 'styled-components';
 import menuI from '../interface/menu_interface';
-import { colorIntermedio, colorMenu, colorWhite } from '../theme/color';
-
-
+import { colorBackgroud, colorIntermedio, colorMenu, colorPrimary, colorWhite } from '../theme/color';
 
 const MenuComponet = () => {
 	const [menu, setMenu] = useState('home')
@@ -74,6 +72,18 @@ const MenuCont = styled.div`
 			padding: 0px 20px ;
 			padding-bottom: 10px ;
 			border-bottom: 1px solid ${colorIntermedio};
+			:hover{
+				color: ${colorBackgroud} ;
+			}
+			:active{
+				transform: scale(.9);
+			}
+
+		}
+		.active{
+			color: ${colorPrimary};
+		}
+		.desactive{
 		}
 	}
 `;
