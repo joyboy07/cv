@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import images from '../../../assets/images'
 import { colorPrimary, colorWhite } from '../../../core/theme/color'
-import { getDataAction } from '../../general/redux/general_action'
+import { getDataAction } from '../../../general/redux/general_action'
 import './style/home.css'
 
 const HomePage =() => {

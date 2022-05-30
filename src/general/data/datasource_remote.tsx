@@ -1,5 +1,5 @@
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../db/firebase";
+import { db } from "../../db/firebase";
 
 
 // class HomeDataLocal{

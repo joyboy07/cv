@@ -1,7 +1,7 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import certificateI from '../../about/interface/certificate_interface';
-import IEducation from '../../about/interface/education_Interface';
-import portafolioI from '../../service/entities/portafolio_Interface';
+import certificateI from '../../feature/about/interface/certificate_interface';
+import IEducation from '../../feature/about/interface/education_Interface';
+import portafolioI from '../../feature/service/entities/portafolio_Interface';
 import { getCertificateRemote, getDataRemote, getPortafolioRemote } from '../data/datasource_remote';
 import { GET_CERTIFICATE, GET_EDUCATION, GET_PORTAFOLIO, INYECT_CERTIFICATE, INYECT_EDUCATION, INYECT_PORTAFOLIO } from './general_action';
 
