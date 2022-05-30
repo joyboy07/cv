@@ -55,8 +55,8 @@ const Data = styled.div`
 	flex-direction: column ;
 	gap: 10px;
 	h3{
-		color: ${colorPrimary} ;
-		border-bottom: 1px solid ${colorPrimary};
+		color: #330055 ;
+		border-bottom: 1px solid #330055;
 		padding-bottom: 6px ;
 	}
 `

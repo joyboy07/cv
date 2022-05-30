@@ -2,13 +2,12 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import Lineas from '../../../app/component/lineas'
-import { colorIntermedio, colorMenu, colorWhite } from '../../../core/theme/color'
+import { colorIntermedio, colorWhite } from '../../../core/theme/color'
 import { getCertificateAction, getDataAction } from '../../../general/redux/general_action'
 import certificateI from '../interface/certificate_interface'
 import IEducation from '../interface/education_Interface'
 import CertificateCard from './components/certificate-card'
 import EducationCard from './components/education-card'
-import './style/home.css'
 
 const AboutPage =() => {
 	const [age, setAge] = useState<number>();
@@ -106,17 +105,25 @@ const GeneralCont = styled.div`
 	section{
 		width: 50%;
 		border-radius: 10px ;
-		border: 2px solid ${colorIntermedio} ;
+		/* border: 2px solid ${colorIntermedio} ; */
 	}
 `
 
 const Education = styled.section`
-	background: ${colorMenu};
+	background: rgba(255,255,255,0.1);
+	backdrop-filter:blur(20px);
+	border:solid 1px rgba(255,255,255,0.2);
+	box-shadow: 0 10px 20px 5px rgba(0,0,0,0.05);
+	border-radius:5px;
 	padding: 10px 0px 25px 0px;
 	height:100% ;
 `
 const Experience = styled.section`
-	background: ${colorMenu};
+	background: rgba(255,255,255,0.1);
+	backdrop-filter:blur(20px);
+	border:solid 1px rgba(255,255,255,0.2);
+	box-shadow: 0 10px 20px 5px rgba(0,0,0,0.05);
+	border-radius:5px;
 	padding: 10px 0px 25px 0px;
 	height:100% ;
 `

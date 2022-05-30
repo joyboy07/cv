@@ -1,6 +1,6 @@
 import { Provider } from "react-redux";
 import {
-    BrowserRouter as Router, Redirect, Route, Switch
+	BrowserRouter as Router, Redirect, Route, Switch
 } from "react-router-dom";
 import styled from "styled-components";
 import Error404 from "../../app/layout/error_404";
@@ -43,6 +43,6 @@ export default Routers;
 export const Reductor = styled.div`
 	width: 100%;
 	height: 100vh;
-	background-color: ${colorBackgroud} ;
+	/* background-color: ${colorBackgroud} ; */
 	display:flex;
 `;
