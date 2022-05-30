@@ -33,8 +33,8 @@ const AboutPage =() => {
 		<AboutCont>
 			<h1>Sobre Mi</h1>
 			<Lineas></Lineas>
-			<h1>Hola mi nombre es julio y soy Desarrollador full stack jr</h1>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat itaque, tempore dolorum repellendus assumenda accusantium minus nam eveniet ipsum unde harum, voluptatem culpa? Aliquid obcaecati, repellat dolorum nihil eaque ratione?</p>
+			{/* <h1>Hola mi nombre es julio y soy Desarrollador full stack jr</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat itaque, tempore dolorum repellendus assumenda accusantium minus nam eveniet ipsum unde harum, voluptatem culpa? Aliquid obcaecati, repellat dolorum nihil eaque ratione?</p> */}
 			<DataPersonal>
 				<ul>
 					<li><span>Fecha de nacimiento:</span> 11 mayo 1996</li>
@@ -50,7 +50,6 @@ const AboutPage =() => {
 				</ul>
 
 			</DataPersonal>
-			<h2>Tecnologias</h2>
 			<GeneralCont>
 				<Education>
 					<h2 style={{marginLeft:'15px'}}>Educacion</h2>

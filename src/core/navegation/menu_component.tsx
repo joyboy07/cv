@@ -1,4 +1,4 @@
-import { faBriefcase, faContactCard, faHome, faList, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faList, faUser } from '@fortawesome/free-solid-svg-icons';
 import * as React from 'react';
 import { useState } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
@@ -19,8 +19,8 @@ const MenuComponet = () => {
             { name: 'Inicio', ruta: '', icono: faHome },
             { name: 'Sobre Mi', ruta: 'about', icono: faUser },
             { name: 'Portafolio', ruta: 'service', icono: faList },
-            { name: 'Poyectos', ruta: 'portafolio', icono: faBriefcase },
-            { name: 'Contacto', ruta: 'contact', icono: faContactCard },
+            // { name: 'Poyectos', ruta: 'portafolio', icono: faBriefcase },
+            // { name: 'Contacto', ruta: 'contact', icono: faContactCard },
         ])
     }, [])
 

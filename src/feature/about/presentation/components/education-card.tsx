@@ -11,8 +11,8 @@ function EducationCard(props:any){
 		</Lineal>
 		<Data>
 			<h3>{item.name}</h3>
+			<h6>{item.date}</h6>
 			<h4>{item.institucion}</h4>
-			<p>{item.date}</p>
 		</Data>
 	</EducationCardCont>
 }
@@ -50,8 +50,13 @@ const Lineal = styled.div`
 `
 const Data = styled.div`
 	margin: 10px 0px;
-	width: 90% ;
+	width: 80% ;
 	display: flex ;
 	flex-direction: column ;
 	gap: 10px;
+	h3{
+		color: ${colorPrimary} ;
+		border-bottom: 1px solid ${colorPrimary};
+		padding-bottom: 6px ;
+	}
 `

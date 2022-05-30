@@ -19,7 +19,7 @@ const HomePage =() => {
 			<section>
 				<h1 >Hola soy <span>Julio </span></h1>
 				{/* <h1>Soy <span>Desarrollador full stack</span></h1> */}
-				<h2>Un <span>Full Stack Developer</span> y me gusta realizar sistemas que ayuden a las personas en sus actividades y también en gusta estar aprendiendo nuevas cosas.</h2>
+				<h2>Un <span>Full Stack Developer jr</span> y me gusta realizar sistemas que ayuden a las personas en sus actividades y también en gusta estar aprendiendo nuevas cosas.</h2>
 				<Buttons >
 					<Button>Mas sobre mi</Button>
 					<Button>CV Descargar</Button>
@@ -64,19 +64,36 @@ export const HomeCont = styled.div`
 				background: ${colorPrimary};
 				border-radius: 20px ;
 				padding: 5px 30px ;
-				:active{
-					transform: scale(.9);
-				}
 			}
 			h1{
 				font-size:70px ;
 				span{
+					animation: h1Animate;
+					animation-duration: 1s;
 					color: ${colorPrimary};
+					font-family: 'Shadows Into Light', cursive;
 				}
 			}
 			h2{
 				span{
+					animation: h1Animate;
+					animation-duration: 1s;
 					color: ${colorPrimary};
+					font-family: 'Shadows Into Light', cursive;
+				}
+			}
+			@keyframes h1Animate{
+				0%{
+					transform: scale(0);
+					opacity: 0;
+				}
+				50%{
+					transform: scale(0);
+					opacity: 50%;
+				}
+				100%{
+					transform: translateX(10);
+					opacity: 100%;
 				}
 			}
 		}
