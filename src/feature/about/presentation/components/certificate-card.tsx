@@ -1,24 +1,25 @@
 import styled from "styled-components"
 import { colorPrimary } from "../../../../core/theme/color"
+import certificateI from "../../interface/certificate_interface"
 
-function ExperienceCard(){
-	return < ExperienceCardCont>
+function CertificateCard(props:any){
+	const item:certificateI = props.props
+	return < CertificateCont>
 		<Lineal>
 			<div></div>
 			<div></div>
 		</Lineal>
 		<Data>
-			<h3>Mecánica automotriz jorge chumpitaz</h3>
-			<h4>RUC: 101573083331</h4>
-			<p> Cargo: Desarrollador </p>
-			<p> 01-05-2020 a 30-08-2020</p>
+			<h3>{item.name }</h3>
+			<h6> {item.dateStar}</h6>
+			<h4>{item.organization}</h4>
 		</Data>
-	</ ExperienceCardCont>
+	</ CertificateCont>
 }
 
-export default ExperienceCard
+export default CertificateCard
 
-const  ExperienceCardCont = styled.div`
+const  CertificateCont = styled.div`
 	display:flex;
 `
 
@@ -49,8 +50,13 @@ const Lineal = styled.div`
 `
 const Data = styled.div`
 	margin: 10px 0px;
-	width: 90% ;
+	width: 80% ;
 	display: flex ;
 	flex-direction: column ;
 	gap: 10px;
+	h3{
+		color: ${colorPrimary} ;
+		border-bottom: 1px solid ${colorPrimary};
+		padding-bottom: 6px ;
+	}
 `

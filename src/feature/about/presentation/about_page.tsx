@@ -1,21 +1,33 @@
 import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import Lineas from '../../../app/component/lineas'
 import { colorIntermedio, colorMenu, colorWhite } from '../../../core/theme/color'
+import { getCertificateAction, getDataAction } from '../../general/redux/general_action'
+import certificateI from '../interface/certificate_interface'
+import IEducation from '../interface/education_Interface'
+import CertificateCard from './components/certificate-card'
 import EducationCard from './components/education-card'
-import ExperienceCard from './components/experience-card'
 import './style/home.css'
 
 const AboutPage =() => {
 	const [age, setAge] = useState<number>();
+	const dispatch = useDispatch()
+
+	const educations: IEducation[] = useSelector((state: any) => state.Reducer.educations)
+	const certificaties: certificateI[] = useSelector((state: any) => state.Reducer.certificates)
+	console.log('names realizado',certificaties)
 	useEffect(() => {
-		// console.log(new Date().getMonth() + 1 )
 		if(new Date().getMonth() + 1 >= 5){
 			setAge(new Date().getFullYear() - 1996)
 		}else{
 			setAge((new Date().getFullYear() - 1996) - 1)
 		}
 	},)
+	useEffect(() => {
+		dispatch(getDataAction(''))
+		dispatch(getCertificateAction(''))
+	}, [])
 
 	return (
 		<AboutCont>
@@ -42,13 +54,20 @@ const AboutPage =() => {
 			<GeneralCont>
 				<Education>
 					<h2 style={{marginLeft:'15px'}}>Educacion</h2>
-					<EducationCard></EducationCard>
-					<EducationCard></EducationCard>
+					{
+						educations.map((item:IEducation) => (
+							<EducationCard key={item.id} props={item} />
+						))
+					}
+					{/* <EducationCard></EducationCard> */}
 				</Education>
 				<Experience>
-					<h2 style={{marginLeft:'15px'}}>Experiencia</h2>
-					<ExperienceCard></ExperienceCard>
-					<ExperienceCard></ExperienceCard>
+					<h2 style={{marginLeft:'15px'}}>Certificados</h2>
+					{
+						certificaties.map((item:certificateI) => (
+							<CertificateCard key={item.id} props={item} />
+						))
+					}
 				</Experience>
 			</GeneralCont>
 		</AboutCont>

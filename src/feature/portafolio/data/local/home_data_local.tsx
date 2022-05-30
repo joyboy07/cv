@@ -1,5 +1,5 @@
 import { collection, getDocs } from "firebase/firestore";
-import db from '../../../../db/firebase';
+import { db } from "../../../../db/firebase";
 import IEducation from '../../entities/education_Interface';
 import Iskills from '../../entities/skill_entity';
 

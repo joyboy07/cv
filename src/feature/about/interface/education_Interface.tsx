@@ -1,8 +1,8 @@
 interface IEducation{
 	id:number
 	date?:string
-	centro?:string
-	edication?:string
+	name?:string
+	institucion?:string
 }
 
 export default IEducation

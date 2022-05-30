@@ -16,11 +16,11 @@ const MenuComponet = () => {
         var xds = (window.location.href).split('/')
         setMenu(xds[xds.length - 1])
         setlistMenu([
-            { name: 'Home', ruta: '', icono: faHome },
-            { name: 'About', ruta: 'about', icono: faUser },
-            { name: 'Services', ruta: 'service', icono: faList },
-            { name: 'Portafolio', ruta: 'portafolio', icono: faBriefcase },
-            { name: 'Contact', ruta: 'contact', icono: faContactCard },
+            { name: 'Inicio', ruta: '', icono: faHome },
+            { name: 'Sobre Mi', ruta: 'about', icono: faUser },
+            { name: 'Portafolio', ruta: 'service', icono: faList },
+            { name: 'Poyectos', ruta: 'portafolio', icono: faBriefcase },
+            { name: 'Contacto', ruta: 'contact', icono: faContactCard },
         ])
     }, [])
 

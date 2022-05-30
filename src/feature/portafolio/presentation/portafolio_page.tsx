@@ -1,19 +1,14 @@
-import { collection, getDocs } from "firebase/firestore"
 import { useEffect } from 'react'
 import styled from 'styled-components'
 import Lineas from '../../../app/component/lineas'
 import { colorWhite } from '../../../core/theme/color'
-import db from '../../../db/firebase'
 import './style/home.css'
 
 const PortafolioPage =() => {
 
 	const getData = async() =>{
-
 	}
-
 	useEffect(() => {
-		console.log(getDocs( collection( db, 'info' )))
 	}, [])
 	
 

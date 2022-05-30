@@ -1,3 +1,4 @@
+import { Provider } from "react-redux";
 import {
 	BrowserRouter as Router, Redirect, Route, Switch
 } from "react-router-dom";
@@ -9,26 +10,31 @@ import HomePage from "../../feature/home/presentation/home_page";
 import PortafolioPage from "../../feature/portafolio/presentation/portafolio_page";
 import ServicePage from "../../feature/service/presentation/service_page";
 import { colorBackgroud } from "../theme/color";
+import Store from './../../feature/general/redux/store_general';
 import MenuComponet from "./menu_component";
+const store = Store();
+
 function Routers() {
 	return (
-		<Router>
-			<Reductor>
-				<MenuComponet></MenuComponet>
-				<div style={{width:'23%'}}></div>
-				<Switch>
-					<Route exact path="/" component={HomePage} />
-					<Route exact path="/about" component={AboutPage} />
-					<Route exact path="/service" component={ServicePage} />
-					<Route exact path="/portafolio" component={PortafolioPage} />
-					<Route exact path="/contact" component={ContactPage} />
-					<Route path="/404" component={Error404} />
-					<Route path="*">
-						<Redirect to="/404" />
-					</Route>
-				</Switch>
-			</Reductor>
-		</Router>
+		<Provider store={store}>
+			<Router>
+				<Reductor>
+					<MenuComponet></MenuComponet>
+					<div style={{width:'23%'}}></div>
+					<Switch>
+						<Route exact path="/" component={HomePage} />
+						<Route exact path="/about" component={AboutPage} />
+						<Route exact path="/service" component={ServicePage} />
+						<Route exact path="/portafolio" component={PortafolioPage} />
+						<Route exact path="/contact" component={ContactPage} />
+						<Route path="/404" component={Error404} />
+						<Route path="*">
+							<Redirect to="/404" />
+						</Route>
+					</Switch>
+				</Reductor>
+			</Router>
+		</Provider>
 	);
 }
 

@@ -1,16 +1,18 @@
 import styled from "styled-components"
 import { colorPrimary } from "../../../../core/theme/color"
+import IEducation from "../../interface/education_Interface"
 
-function EducationCard(){
+function EducationCard(props:any){
+	const item:IEducation= props.props
 	return <EducationCardCont>
 		<Lineal>
 			<div></div>
 			<div></div>
 		</Lineal>
 		<Data>
-			<h3>2005 - 2012</h3>
-			<h4>ingenieria informatica</h4>
-			<p>Universidad nacional jose faustino sanchez carrion</p>
+			<h3>{item.name}</h3>
+			<h4>{item.institucion}</h4>
+			<p>{item.date}</p>
 		</Data>
 	</EducationCardCont>
 }

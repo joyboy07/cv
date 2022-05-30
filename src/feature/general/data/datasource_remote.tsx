@@ -1,6 +1,5 @@
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../../db/firebase";
-
+import { db } from "../../../db/firebase";
 
 
 // class HomeDataLocal{
@@ -35,6 +34,14 @@ import { db } from "../../../../db/firebase";
 // export default HomeDataLocal
 
 
-export function getHomeRemote(idSucursal:any) {
-	return getDocs( collection( db, 'info' ));
+export function getDataRemote() {
+	return getDocs( collection( db, 'education' ));
+}
+
+export function getCertificateRemote() {
+	return getDocs( collection( db, 'certificate' ));
+}
+
+export function getPortafolioRemote() {
+	return getDocs( collection( db, 'portafolio' ));
 }
