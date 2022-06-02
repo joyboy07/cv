@@ -1,14 +1,14 @@
 import { Provider } from "react-redux";
 import {
-	BrowserRouter as Router, Redirect, Route, Switch
+    BrowserRouter as Router, Redirect, Route, Switch
 } from "react-router-dom";
 import styled from "styled-components";
 import Error404 from "../../app/layout/error_404";
 import AboutPage from "../../feature/about/presentation/about_page";
+import PortafolioPage from "../../feature/any/presentation/portafolio_page";
 import ContactPage from "../../feature/contact/presentation/contact_page";
 import HomePage from "../../feature/home/presentation/home_page";
-import PortafolioPage from "../../feature/portafolio/presentation/portafolio_page";
-import ServicePage from "../../feature/service/presentation/service_page";
+import ServicePage from "../../feature/portafolio/presentation/portafolio_page";
 import Store from '../../general/redux/store_general';
 import { colorBackgroud } from "../theme/color";
 import MenuComponet from "./menu_component";

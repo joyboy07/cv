@@ -59,13 +59,17 @@ const MenuCont = styled.div`
     justify-content: center ;
     .active{
         transform: translateX(70px);
-        background: ${colorSecon};
+        background: rgba(255,255,255,0.1);
+	backdrop-filter:blur(20px);
+        /* background: ${colorSecon}; */
         transition: 2s;
         ::before{
-            background: ${colorPrimary} ;
+            background: rgba(255,255,255,0.1);
+	backdrop-filter:blur(20px);
         }
         ::after{
-                background: ${colorTers} ;
+            background: rgba(255,255,255,0.1);
+	backdrop-filter:blur(20px);
             }
     }
     .desactive{
@@ -80,7 +84,6 @@ const MenuCont = styled.div`
         gap: 20px ;
         color: ${colorWhite};
         li{
-			
             position: relative;
             list-style: none ;
             width: 200px ;
@@ -125,10 +128,7 @@ const MenuCont = styled.div`
                 transform-origin: bottom ;
                 transform: skewX(45deg) ;
                 transition: 0.5s;
-				box-shadow: -120px  100px 30px rgba(255,255,255,0.1);
-            }
-            :last-child::after{
-                box-shadow: -120px 12   0px 40px rgba(0,0,0,0.5)
+				box-shadow: -120px  100px 30px rgba(0,0,0,0.7);
             }
             :hover::after{
                 background: ${colorTers} ;
