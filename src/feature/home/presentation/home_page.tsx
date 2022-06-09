@@ -18,7 +18,7 @@ const HomePage =() => {
 			<section>
 				<h1 >Hola soy <span>Julio </span></h1>
 				{/* <h1>Soy <span>Desarrollador full stack</span></h1> */}
-				<h2>Un <span>Full Stack Developer jr</span> y me gusta realizar sistemas que ayuden a las personas en sus actividades y también en gusta estar aprendiendo nuevas cosas.</h2>
+				<h2>Un <span>Full Stack Developer jr</span> y me gusta realizar sistemas que ayuden a las personas en sus actividades y también me gusta estar aprendiendo nuevas cosas.</h2>
 				<Buttons >
 					<ButtonRun><p>CV Descargar</p></ButtonRun>
 				</Buttons>
@@ -34,6 +34,7 @@ const ImgLogo = styled.img`
 		/* background-image: url(${images.udemy}); */
 		background-size: cover;
 		/* background-color: #fff; */
+
 		border-radius: 10px;
 		border: none;
 		width: 100%;
@@ -105,11 +106,26 @@ export const HomeCont = styled.div`
 			opacity:   10%;
 		}
 	}
+	@media (max-width: 600px) {
+        width: 100% ;
+		/* background-color: #ccc ; */
+		section{
+			:nth-child(1){
+				width: 100%;
+				gap:40px;
+				align-items: center ;
+			}
+			:nth-child(2){
+				display: none;
+			}
+		}
+	}
 `
 
 export const Buttons = styled.div`
 	display: flex ;
 	gap:15px;
+
 `
 
 const ButtonRun = styled.div`

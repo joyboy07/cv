@@ -1,18 +1,24 @@
 import { faHome, faList, faUser } from '@fortawesome/free-solid-svg-icons';
-import * as React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 import styled from 'styled-components';
+import BurguerButton from '../../app/component/BurguerButton';
 import menuI from '../interface/menu_interface';
-import { colorIntermedio, colorMenu, colorPrimary, colorSecon, colorTers, colorWhite, fbAppbar } from '../theme/color';
+import { colorIntermedio, colorMenu, colorPrimary, colorSecon, colorWhite, fbAppbar } from '../theme/color';
 
 const MenuComponet = () => {
     const [menu, setMenu] = useState('home')
     const [listMenu, setlistMenu] = useState<menuI[]>([])
 
+    const [clicked, setClicked] = useState(false)
+    const handleClick = () => {
+    //cuando esta true lo pasa a false y vice versa
+        setClicked(!clicked)
+    }
+
     let history = useHistory();
     const { url } = useRouteMatch();
-    React.useEffect(() => {
+    useEffect(() => {
         var xds = (window.location.href).split('/')
         setMenu(xds[xds.length - 1])
         setlistMenu([
@@ -31,7 +37,11 @@ const MenuComponet = () => {
 
     return (
     <MenuCont>
-        <ul >
+        <CenterCont>
+            <BurguerButton clicked={clicked}  handleClick={handleClick}/>
+        </CenterCont>
+
+        <ul className={  clicked ? 'activelo ' : 'desactivelo'} >
             {
                 listMenu.map((item: menuI) => (
                     <li key={item.name}  className={  menu == item.ruta ? 'active ' : 'desactive'} onClick={() => changeMenu(item.ruta)} >
@@ -47,104 +57,147 @@ export default MenuComponet;
 
 
 const MenuCont = styled.div`
-    width: 23%;
-    height: 100vh;
-    position: fixed ;
-    top: 0 ;
-    z-index: 10;
-    /* background-color: ${colorMenu} ; */
-    /* border-right: 2px solid ${colorIntermedio}; */
-    display: flex ;
-    align-items: center ;
-    justify-content: center ;
-    .active{
-        transform: translateX(70px);
-        background: rgba(255,255,255,0.1);
-	backdrop-filter:blur(20px);
-        /* background: ${colorSecon}; */
-        transition: 2s;
-        ::before{
-            background: rgba(255,255,255,0.1);
-	backdrop-filter:blur(20px);
+    @media (max-width: 600px) {
+        ul{
+            display: flex;
+            flex-direction: column;
+            align-items:  center;
+            gap: 10px ;
+            height: 0px ;
+            overflow: hidden;
+            li{
+                list-style: none ;
+                a{
+                }
+            }
         }
-        ::after{
-            background: rgba(255,255,255,0.1);
-	backdrop-filter:blur(20px);
-            }
+        .activelo{
+            animation-name: example;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+        }
+        .desactivelo{
+            height: 0;
+            animation-name: reversess;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes example {
+            from {height:0 ;}
+            to {height: 90px;}
+        }
+        @keyframes reversess {
+            from {height:90px ;}
+            to {height: 0;}
+        }
     }
-    .desactive{
-        background: #3e3f46;
-    }
-    ul{
-        position:  relative;
-        transform:  skewY(-15deg);
-        text-decoration:none ;
+    @media (min-width: 600px) {
+        width: 23%;
+        height: 100vh;
+        position: fixed ;
+        top: 0 ;
+        z-index: 10;
         display: flex ;
-        flex-direction: column;
-        gap: 20px ;
-        color: ${colorWhite};
-        li{
-            position: relative;
-            list-style: none ;
-            width: 200px ;
-            background: ${colorIntermedio} ;
-            padding: 25px ;
-            cursor: pointer;
-            a{
-                text-decoration: none;
-                color: #999;
-                /* display: block ; */
-                /* text-transform: uppercase; */
-				z-index: 11 ;
-                letter-spacing: 0.1em ;
-				transform: skewX(45deg) ;
-				position: absolute;
-                top: -30px ;
-            }
+        align-items: center ;
+        justify-content: center ;
+        .active{
+            transform: translateX(70px);
+            background: rgba(255,255,255,0.1);
+        backdrop-filter:blur(20px);
+            /* background: ${colorSecon}; */
+            transition: 2s;
             ::before{
-                content: '';
-                position: absolute;
-                width: 40px;
-                height: 100%;
-                background: ${fbAppbar};
-                top: 0 ;
-                left: -40px;
-                transform-origin: right ;
-                transform: skewY(45deg) ;
-                transition: 0.5s;
-
-            }
-            :hover::before{
-                background: ${colorPrimary} ;
+                background: rgba(255,255,255,0.1);
+        backdrop-filter:blur(20px);
             }
             ::after{
-                content: '';
-                position: absolute;
-                top: -40px ;
-                left: 0;
-                width: 100%;
-                height: 40px;
-                background: ${colorMenu};
-                transform-origin: bottom ;
-                transform: skewX(45deg) ;
-                transition: 0.5s;
-				box-shadow: -120px  100px 30px rgba(0,0,0,0.7);
-            }
-            :hover::after{
-                background: ${colorTers} ;
-            }
-            :hover{
-                background: ${colorSecon};
-                transform: translateX(70px);
-                transition: 2s;
-            }
-            
+                background: rgba(255,255,255,0.1);
+        backdrop-filter:blur(20px);
+                }
+        }
+        /* .desactive{
+            background: #3e3f46;
+        } */
+        ul{
+            position:  relative;
+            transform:  skewY(-15deg);
+            text-decoration:none ;
+            display: flex ;
+            flex-direction: column;
+            gap: 20px ;
+            color: ${colorWhite};
+            li{
+                position: relative;
+                list-style: none ;
+                width: 200px ;
+                background: ${colorIntermedio} ;
+                padding: 25px ;
+                cursor: pointer;
+                a{
+                    text-decoration: none;
+                    color: #999;
+                    /* display: block ; */
+                    /* text-transform: uppercase; */
+                    z-index: 11 ;
+                    letter-spacing: 0.1em ;
+                    transform: skewX(45deg) ;
+                    position: absolute;
+                    top: -30px ;
+                }
+                ::before{
+                    content: '';
+                    position: absolute;
+                    width: 40px;
+                    height: 100%;
+                    background: ${fbAppbar};
+                    top: 0 ;
+                    left: -40px;
+                    transform-origin: right ;
+                    transform: skewY(45deg) ;
+                    transition: 0.5s;
 
+                }
+                :hover::before{
+                    background: rgba(255,255,255,0.1);
+                    backdrop-filter:blur(20px);
+                }
+                ::after{
+                    content: '';
+                    position: absolute;
+                    top: -40px ;
+                    left: 0;
+                    width: 100%;
+                    height: 40px;
+                    background: ${colorMenu};
+                    transform-origin: bottom ;
+                    transform: skewX(45deg) ;
+                    transition: 0.5s;
+                    box-shadow: -120px  100px 30px rgba(0,0,0,0.7);
+                }
+                :hover::after{
+                    background: rgba(255,255,255,0.1);
+                    backdrop-filter:blur(20px);
+                }
+                :hover{
+                    background: rgba(255,255,255,0.1);
+                    backdrop-filter:blur(20px);
+                    transform: translateX(70px);
+                    transition: 2s;
+                }
+            }
+            .active{
+                color: ${colorPrimary};
+            }
+            .desactive{
+            }
         }
-        .active{
-            color: ${colorPrimary};
-        }
-        .desactive{
-        }
+    }
+`;
+
+const CenterCont = styled.div`
+    display: flex;
+    justify-content: center ;
+    @media (min-width: 600px) {
+        display: none;
     }
 `;

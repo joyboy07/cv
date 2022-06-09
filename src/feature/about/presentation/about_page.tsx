@@ -96,6 +96,12 @@ const DataPersonal = styled.div`
 			}
 		}
 	}
+	@media (max-width: 600px) {
+		display: block;
+		ul{
+			padding-top: 10px ;
+		}
+	}
 `
 
 const GeneralCont = styled.div`
@@ -106,6 +112,13 @@ const GeneralCont = styled.div`
 		width: 50%;
 		border-radius: 10px ;
 		/* border: 2px solid ${colorIntermedio} ; */
+	}
+	@media (max-width: 600px) {
+		display: block ;
+		section{
+			width: 100%;
+			margin-top: 20px ;
+		}
 	}
 `
 

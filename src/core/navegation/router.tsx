@@ -1,6 +1,6 @@
 import { Provider } from "react-redux";
 import {
-    BrowserRouter as Router, Redirect, Route, Switch
+	BrowserRouter as Router, Redirect, Route, Switch
 } from "react-router-dom";
 import styled from "styled-components";
 import Error404 from "../../app/layout/error_404";
@@ -15,12 +15,16 @@ import MenuComponet from "./menu_component";
 const store = Store();
 
 function Routers() {
+
 	return (
 		<Provider store={store}>
 			<Router>
 				<Reductor>
-					<MenuComponet></MenuComponet>
-					<div style={{width:'23%'}}></div>
+					<MenuComponet/>
+					{/* <div>
+						<MenuMovilComponet/>
+					</div> */}
+					<div className="xd" style={{width:'23%'}}></div>
 					<Switch>
 						<Route exact path="/" component={HomePage} />
 						<Route exact path="/about" component={AboutPage} />
@@ -45,4 +49,13 @@ export const Reductor = styled.div`
 	height: 100vh;
 	/* background-color: ${colorBackgroud} ; */
 	display:flex;
+	position: relative;
+	.xd{
+		@media (max-width: 600px) {
+        display: none;
+		}
+	}
+	@media (max-width: 600px) {
+		flex-direction: column;
+	}
 `;

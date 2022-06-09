@@ -46,9 +46,23 @@ const PortafolioCardCont = styled.div`
 	p{
 		text-align: justify	 ;
 	}
+	@media (max-width: 600px) {
+		
+		section{
+			:nth-child(1){
+				width: 40%;
+			}
+			:nth-child(2){
+				width: 60%;
+			}
+		}
+	}
 `
 const ImgCont = styled.img`
 	width: 100%;
 	height: 400px;
 	border-radius: 10px ;
+	@media (max-width: 600px) {
+		height: 150px;
+	}
 `
