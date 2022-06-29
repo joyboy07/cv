@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colorPrimary } from '../../core/theme/color'
+import { colorWhite } from '../../core/theme/color'
 
 function Lineas() {
 	return (
@@ -20,12 +20,12 @@ const LineasCont = styled.div`
 	gap: 7px ;
 	div{
 		:nth-child(1){
-			background-color: ${colorPrimary};
+			background-color: ${colorWhite};
 			height: 5px;
 			width: 120px;
 		}
 		:nth-child(2){
-			background-color: ${colorPrimary};
+			background-color: ${colorWhite};
 			height: 5px;
 			width: 60px;
 		}

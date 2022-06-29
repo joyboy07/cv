@@ -1,4 +1,4 @@
-import { Document, Image, Page, Text, View } from "@react-pdf/renderer";
+import { Document, Page, Text, View } from "@react-pdf/renderer";
 
 
 function DocuPdf({ poema }:any) {
@@ -16,24 +16,24 @@ function DocuPdf({ poema }:any) {
 			}}
 		>
 			<View
-			style={{
-				display: "flex",
-				flexDirection: "column",
-				justifyContent: "center",
-				alignItems: "center",
-				backgroundColor: "white",
-				padding: 10,
-			}}
-		>
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "center",
+					alignItems: "center",
+					backgroundColor: "white",
+					padding: 10,
+				}}
+			>
 			<Text style={{ color: "#3388af", fontSize: "42px" }}>
-			fdsfsd
+			Julio Porlles Pardo
 			</Text>
 			<Text>Por </Text>
-			<Image
+			{/* <Image
 				src="https://picsum.photos/600/400"
 			//   alt="random image"
 				style={{ maxWidth: "600px", maxHeight: "400" }}
-			/>
+			/> */}
 			<Text
 				style={{
 				color: "gray",

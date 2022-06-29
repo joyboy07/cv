@@ -1,21 +1,28 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { colorPrimary, colorWhite } from '../../../../core/theme/color'
 import { getDataAction } from '../../../../general/redux/general_action'
 
 const HomeLayout =() => {
+
+	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	useEffect(() => {
 		dispatch(getDataAction(''))
 	}, [])
+
+	function pushpdf() {
+		navigate('/pdf')
+	}
 	return (
 		<HomeCont>
 			<section>
 				<h1 >Hola soy <span>Julio </span></h1>
 				<h2>Un <span>Full Stack Developer jr</span> y me gusta realizar sistemas que ayuden a las personas en sus actividades y también me gusta estar aprendiendo nuevas cosas.</h2>
 				<Buttons >
-					<ButtonRun><p>CV Descargar</p></ButtonRun>
+					<ButtonRun onClick={pushpdf}><p>CV Descargar</p></ButtonRun>
 				</Buttons>
 			</section>
 			<section>

@@ -1,16 +1,14 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import styled from 'styled-components'
 import MenuComponet from '../../../core/navegation/menu_component'
 import { colorPrimary, colorWhite } from '../../../core/theme/color'
 import { getDataAction } from '../../../general/redux/general_action'
 
 const HomePage =() => {
-    let history = useNavigate();
 	const dispatch = useDispatch()
 	useEffect(() => {
-		history(`home`);
 		dispatch(getDataAction(''))
 	}, [])
 	return (
@@ -30,18 +28,8 @@ export const Reductor = styled.div`
 	height: 100vh;
 	display: grid;
 	grid-template-columns: 25% 75% ;
-	/* position: relative; */
-	nav{
-		/* background-color:#cc1 ; */
-	}
-	aside{
-		/* background-color:#c11 ; */
-	}
 	@media (max-width: 600px) {
 		display:block;
-		/* nav{
-			position: absolute;
-		} */
 	}
 `;
 

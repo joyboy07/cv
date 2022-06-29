@@ -18,14 +18,13 @@ const MenuComponet = () => {
 
     let history = useNavigate();
     useEffect(() => {
+        history(`home`);
         var xds = (window.location.href).split('/')
         setMenu(xds[xds.length - 1])
         setlistMenu([
             { name: 'Inicio', ruta: 'home', icono: faHome },
             { name: 'Sobre Mi', ruta: 'about', icono: faUser },
             { name: 'Portafolio', ruta: 'service', icono: faList },
-            // { name: 'Poyectos', ruta: 'portafolio', icono: faBriefcase },
-            // { name: 'Contacto', ruta: 'contact', icono: faContactCard },
         ])
     }, [])
 
@@ -40,7 +39,6 @@ const MenuComponet = () => {
         <CenterCont>
             <BurguerButton clicked={clicked}  handleClick={handleClick}/>
         </CenterCont>
-
         <ul className={  clicked ? 'activelo ' : 'desactivelo'} >
             {
                 listMenu.map((item: menuI) => (

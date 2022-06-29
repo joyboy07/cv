@@ -16,23 +16,21 @@ import Store from '../../general/redux/store_general';
 const store = Store();
 
 function Routers() {
-    // let history = useNavigate();
 	useEffect(() => {
-		// history(`home`);
 	}, [])
 	return (
 		<Provider store={store}>
 			<Router>
 				<Routes>
 					<Route path="/" element={<HomePage/>} >
-						<Route path="/home" element={<HomeLayout/>} />
-						<Route path="/about" element={<AboutPage/>} />
-						<Route path="/service" element={<ServicePage/>} />
-						<Route path="/portafolio" element={<PortafolioPage/>} />
-						<Route path="/contact" element={<ContactPage/>} />
+						<Route path="home" element={<HomeLayout/>} />
+						<Route path="about" element={<AboutPage/>} />
+						<Route path="service" element={<ServicePage/>} />
+						<Route path="portafolio" element={<PortafolioPage/>} />
+						<Route path="contact" element={<ContactPage/>} />
 					</Route>
-					<Route path="/pdf" element={<HomeCvpdf/>} />
-					<Route path="/404" element={<Error404/>} />
+					<Route path="pdf" element={<HomeCvpdf/>} />
+					<Route path="*" element={<Error404/>} />
 				</Routes>
 			</Router>
 		</Provider>
