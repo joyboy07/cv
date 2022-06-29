@@ -4,7 +4,7 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 import styled from 'styled-components';
 import BurguerButton from '../../app/component/BurguerButton';
 import menuI from '../interface/menu_interface';
-import { colorIntermedio, colorMenu, colorPrimary, colorSecon, colorWhite, fbAppbar } from '../theme/color';
+import { colorIntermedio, colorMenu, colorPrimary, colorWhite, fbAppbar } from '../theme/color';
 
 const MenuComponet = () => {
     const [menu, setMenu] = useState('home')
@@ -33,6 +33,7 @@ const MenuComponet = () => {
     const changeMenu = (data: any) => {
         history.push(`/${data}`);
         setMenu(data)
+        setClicked(false)
     }
 
     return (
@@ -61,33 +62,38 @@ const MenuCont = styled.div`
         ul{
             display: flex;
             flex-direction: column;
+            justify-content: center ;
             align-items:  center;
             gap: 10px ;
-            height: 0px ;
+            height: 0px;
             overflow: hidden;
             li{
                 list-style: none ;
                 a{
+                    font-size:30px ;
+                    font-weight: bold ;
+                    color:${colorWhite} ;
+                    border-bottom: 1px solid ${colorWhite} ;
                 }
             }
         }
         .activelo{
             animation-name: example;
-            animation-duration: 3s;
+            animation-duration: 2s;
             animation-fill-mode: forwards;
         }
         .desactivelo{
             height: 0;
             animation-name: reversess;
-            animation-duration: 3s;
+            animation-duration: 2s;
             animation-fill-mode: forwards;
         }
         @keyframes example {
             from {height:0 ;}
-            to {height: 90px;}
+            to {height: 90vh;}
         }
         @keyframes reversess {
-            from {height:90px ;}
+            from {height: 90vh ;}
             to {height: 0;}
         }
     }
@@ -103,21 +109,18 @@ const MenuCont = styled.div`
         .active{
             transform: translateX(70px);
             background: rgba(255,255,255,0.1);
-        backdrop-filter:blur(20px);
-            /* background: ${colorSecon}; */
+            backdrop-filter:blur(20px);
             transition: 2s;
             ::before{
                 background: rgba(255,255,255,0.1);
-        backdrop-filter:blur(20px);
+                backdrop-filter:blur(20px);
             }
             ::after{
                 background: rgba(255,255,255,0.1);
-        backdrop-filter:blur(20px);
-                }
+                backdrop-filter:blur(20px);
+            }
         }
-        /* .desactive{
-            background: #3e3f46;
-        } */
+
         ul{
             position:  relative;
             transform:  skewY(-15deg);
@@ -136,12 +139,12 @@ const MenuCont = styled.div`
                 a{
                     text-decoration: none;
                     color: #999;
-                    /* display: block ; */
-                    /* text-transform: uppercase; */
                     z-index: 11 ;
                     letter-spacing: 0.1em ;
                     transform: skewX(45deg) ;
                     position: absolute;
+                    font-weight: bold ;
+                    color:${colorWhite} ;
                     top: -30px ;
                 }
                 ::before{
