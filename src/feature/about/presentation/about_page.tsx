@@ -71,9 +71,10 @@ const AboutPage =() => {
 	)
 }
 const AboutCont = styled.div`
-	width: 77%;
-	margin: 25px 25px 0px 45px ;
+	width: 90%;
 	color: ${colorWhite};
+	margin: auto;
+	padding-top: 40px;
 `
 const DataPersonal = styled.div`
 	display: flex;

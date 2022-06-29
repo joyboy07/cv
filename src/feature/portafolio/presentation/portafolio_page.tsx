@@ -34,10 +34,11 @@ const ServicePage =() => {
 	)
 }
 const ServiceCont = styled.div`
-
-	width: 77%;
+	width: 90%;
 	margin: 25px 25px 0px 45px ;
 	color: ${colorWhite};
+	margin: auto;
+	padding-top: 40px;
 `
 
 const FolderCont = styled.div`
