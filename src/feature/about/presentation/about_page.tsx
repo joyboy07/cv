@@ -15,7 +15,6 @@ const AboutPage =() => {
 
 	const educations: IEducation[] = useSelector((state: any) => state.Reducer.educations)
 	const certificaties: certificateI[] = useSelector((state: any) => state.Reducer.certificates)
-	console.log('names realizado',certificaties)
 	useEffect(() => {
 		if(new Date().getMonth() + 1 >= 5){
 			setAge(new Date().getFullYear() - 1996)

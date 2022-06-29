@@ -12,7 +12,6 @@ const ServicePage =() => {
 	const dispatch = useDispatch()
 
 	const portafolios: portafolioI[] = useSelector((state: any) => state.Reducer.portafolios)
-	console.log(portafolios)
 
 	useEffect(() => {
 		dispatch(getPortafolioAction())

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 const Skills =(params:any) => {
 	var widths = params.width
-	console.log(widths)
 	const SpanProgresid = styled.span`
 		height: 20px;
 		float: left;

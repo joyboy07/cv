@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
-import images from '../../../assets/images'
 import { colorPrimary, colorWhite } from '../../../core/theme/color'
 import { getDataAction } from '../../../general/redux/general_action'
 import './style/home.css'
@@ -10,9 +9,7 @@ const HomePage =() => {
 	const dispatch = useDispatch()
 	useEffect(() => {
 		dispatch(getDataAction(''))
-		console.log('X')
 	}, [])
-	
 	return (
 		<HomeCont>
 			<section>
@@ -31,10 +28,7 @@ const HomePage =() => {
 }
 
 const ImgLogo = styled.img`
-		/* background-image: url(${images.udemy}); */
 		background-size: cover;
-		/* background-color: #fff; */
-
 		border-radius: 10px;
 		border: none;
 		width: 100%;
@@ -42,18 +36,22 @@ const ImgLogo = styled.img`
 	`
 
 export const HomeCont = styled.div`
-	width: 77%;
 	display: flex;
 	position: relative;
+	height: 100vh;
+	@media (max-width: 600px) {
+		height: 90vh;
+	}
 	section{
 		:nth-child(1){
 			height:100%;
-			width: 60%;
+			width: 100%;
 			display:flex;
 			flex-direction: column;
 			justify-content: center;
 			gap:12px ;
-			margin-left: 40px ;
+			/* margin-left: 40px ; */
+			padding: 0px 40px;
 			color: ${colorWhite};
 			button{
 				text-transform: none;
@@ -73,6 +71,7 @@ export const HomeCont = styled.div`
 				}
 			}
 			h2{
+				text-align: justify ;
 				span{
 					animation: h1Animate;
 					animation-duration: 1s;
@@ -108,7 +107,6 @@ export const HomeCont = styled.div`
 	}
 	@media (max-width: 600px) {
         width: 100% ;
-		/* background-color: #ccc ; */
 		section{
 			:nth-child(1){
 				width: 100%;

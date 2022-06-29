@@ -8,7 +8,6 @@ function* getHome(_:any):any{
 
 	try {
 		var results = yield call(getHomeRemote,1)
-		console.log(results)
 		// results.forEach((docm:any)=>{
 		// 	campus.push({
 		// 		id: docm.id,

@@ -3,8 +3,6 @@ import portafolioI from "../../entities/portafolio_Interface"
 
 function PortafolioCard(props:any){
 	const item:portafolioI = props.props
-
-	console.log('img',item.img)
 	return <PortafolioCardCont>
 		<section>
 			<ImgCont src={item.img}></ImgCont>
