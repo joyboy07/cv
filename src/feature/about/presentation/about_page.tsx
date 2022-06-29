@@ -38,13 +38,13 @@ const AboutPage =() => {
 					<li><span>Fecha de nacimiento:</span> 11 mayo 1996</li>
 					<li><span>Direccion:</span> Peru - Lima - huaura - huacho </li>
 					<li><span>Linkeding:</span>  <a href="https://www.linkedin.com/in/julio-porlles-pardo/">https://www.linkedin.com/in/julio-porlles-pardo/</a></li>
-					<li><span>Pasa tiempo :</span> Sallir con amigos</li>
+					<li><span>Pasa tiempo :</span> Video Juegos y Estudiar</li>
 				</ul>
 				<ul>
 					<li><span>Edad:</span> {age} </li>
 					<li><span>Movil:</span> 970578887</li>
 					<li><span>email:</span> julio.porlles.pardo@gmail.com</li>
-					<li><span>Frelancer:</span> Disponible</li>
+					<li><span>Freelancer:</span> Disponible</li>
 				</ul>
 
 			</DataPersonal>
@@ -56,7 +56,6 @@ const AboutPage =() => {
 							<EducationCard key={item.id} props={item} />
 						))
 					}
-					{/* <EducationCard></EducationCard> */}
 				</Education>
 				<Experience>
 					<h2 style={{marginLeft:'15px'}}>Certificados</h2>
@@ -75,6 +74,7 @@ const AboutCont = styled.div`
 	color: ${colorWhite};
 	margin: auto;
 	padding-top: 40px;
+	padding-bottom: 40px;
 `
 const DataPersonal = styled.div`
 	display: flex;
@@ -90,14 +90,30 @@ const DataPersonal = styled.div`
 			gap:10px;
 			padding: 0px 20px ;
 			padding-bottom: 10px ;
-			border-bottom: 1px solid ${colorIntermedio};
+			border-bottom: 1px solid ${colorWhite};
 			span{
 				font-weight: bold ;
 			}
 		}
 	}
+	@media (min-width: 600px) {
+		ul{
+			background: rgba(255,255,255,0.1);
+			backdrop-filter:blur(20px);
+			border:solid 1px rgba(255,255,255,0.2);
+			box-shadow: 0 10px 20px 5px rgba(0,0,0,0.05);
+			border-radius:5px;
+			padding: 10px;
+		}
+	}
 	@media (max-width: 600px) {
 		display: block;
+		background: rgba(255,255,255,0.1);
+		backdrop-filter:blur(20px);
+		border:solid 1px rgba(255,255,255,0.2);
+		box-shadow: 0 10px 20px 5px rgba(0,0,0,0.05);
+		border-radius:5px;
+		padding: 10px;
 		ul{
 			padding-top: 10px ;
 		}

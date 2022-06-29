@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colorPrimary } from "../../../../core/theme/color"
+import { colorWhite } from "../../../../core/theme/color"
 import certificateI from "../../interface/certificate_interface"
 
 function CertificateCard(props:any){
@@ -36,7 +36,7 @@ const Lineal = styled.div`
 			top: 14px;
 			position: absolute ;
 			border-radius: 50% ;
-			background: ${colorPrimary} ;
+			background: ${colorWhite} ;
 		}
 		:nth-child(2){
 			height: 100%;
@@ -44,7 +44,7 @@ const Lineal = styled.div`
 			top: 16px;
 			position: absolute;
 			border-radius: 3px;
-			background: ${colorPrimary} ;
+			background: ${colorWhite} ;
 		}
 	}
 `
@@ -55,8 +55,8 @@ const Data = styled.div`
 	flex-direction: column ;
 	gap: 10px;
 	h3{
-		color: #330055 ;
-		border-bottom: 1px solid #330055;
+		color: ${colorWhite} ;
+		border-bottom: 1px solid ${colorWhite};
 		padding-bottom: 6px ;
 	}
 `
