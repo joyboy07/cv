@@ -7,6 +7,7 @@ import Error404 from "../../app/layout/error_404";
 import AboutPage from "../../feature/about/presentation/about_page";
 import PortafolioPage from "../../feature/any/presentation/portafolio_page";
 import ContactPage from "../../feature/contact/presentation/contact_page";
+import HomeCvpdf from "../../feature/home/presentation/home_cvpdf";
 import HomePage from "../../feature/home/presentation/home_page";
 import ServicePage from "../../feature/portafolio/presentation/portafolio_page";
 import Store from '../../general/redux/store_general';
@@ -29,6 +30,7 @@ function Routers() {
 							<Route exact path="/service" component={ServicePage} />
 							<Route exact path="/portafolio" component={PortafolioPage} />
 							<Route exact path="/contact" component={ContactPage} />
+							<Route exact path="/pdf" component={HomeCvpdf} />
 							<Route path="/404" component={Error404} />
 							<Route path="*">
 								<Redirect to="/404" />
