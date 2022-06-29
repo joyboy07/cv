@@ -1,6 +1,6 @@
 import { faHome, faList, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
-import { useHistory, useRouteMatch } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import BurguerButton from '../../app/component/BurguerButton';
 import menuI from '../interface/menu_interface';
@@ -16,13 +16,12 @@ const MenuComponet = () => {
         setClicked(!clicked)
     }
 
-    let history = useHistory();
-    const { url } = useRouteMatch();
+    let history = useNavigate();
     useEffect(() => {
         var xds = (window.location.href).split('/')
         setMenu(xds[xds.length - 1])
         setlistMenu([
-            { name: 'Inicio', ruta: '', icono: faHome },
+            { name: 'Inicio', ruta: 'home', icono: faHome },
             { name: 'Sobre Mi', ruta: 'about', icono: faUser },
             { name: 'Portafolio', ruta: 'service', icono: faList },
             // { name: 'Poyectos', ruta: 'portafolio', icono: faBriefcase },
@@ -31,7 +30,7 @@ const MenuComponet = () => {
     }, [])
 
     const changeMenu = (data: any) => {
-        history.push(`/${data}`);
+        history(`${data}`);
         setMenu(data)
         setClicked(false)
     }

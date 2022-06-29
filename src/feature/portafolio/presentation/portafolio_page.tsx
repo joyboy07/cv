@@ -6,7 +6,6 @@ import { colorWhite } from '../../../core/theme/color'
 import { getPortafolioAction } from '../../../general/redux/general_action'
 import portafolioI from '../entities/portafolio_Interface'
 import PortafolioCardCont from './components/portafolio-card'
-import './style/home.css'
 
 const ServicePage =() => {
 	const dispatch = useDispatch()

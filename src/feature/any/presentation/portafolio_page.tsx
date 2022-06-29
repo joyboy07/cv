@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import styled from 'styled-components'
 import Lineas from '../../../app/component/lineas'
 import { colorWhite } from '../../../core/theme/color'
-import './style/home.css'
 
 const PortafolioPage =() => {
 

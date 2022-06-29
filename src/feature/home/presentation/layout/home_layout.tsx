@@ -1,49 +1,30 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { Outlet, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import MenuComponet from '../../../core/navegation/menu_component'
-import { colorPrimary, colorWhite } from '../../../core/theme/color'
-import { getDataAction } from '../../../general/redux/general_action'
+import { colorPrimary, colorWhite } from '../../../../core/theme/color'
+import { getDataAction } from '../../../../general/redux/general_action'
 
-const HomePage =() => {
-    let history = useNavigate();
+const HomeLayout =() => {
 	const dispatch = useDispatch()
 	useEffect(() => {
-		history(`home`);
 		dispatch(getDataAction(''))
 	}, [])
 	return (
-		<Reductor>
-				<nav>
-					<MenuComponet/>
-				</nav>
-				<aside>
-					<Outlet />
-				</aside>
-		</Reductor>
+		<HomeCont>
+			<section>
+				<h1 >Hola soy <span>Julio </span></h1>
+				<h2>Un <span>Full Stack Developer jr</span> y me gusta realizar sistemas que ayuden a las personas en sus actividades y también me gusta estar aprendiendo nuevas cosas.</h2>
+				<Buttons >
+					<ButtonRun><p>CV Descargar</p></ButtonRun>
+				</Buttons>
+			</section>
+			<section>
+				<ImgLogo src='https://firebasestorage.googleapis.com/v0/b/cv-juliopp.appspot.com/o/joyboy2.png?alt=media&token=a45d0a91-2eca-4169-8d35-a496adc6471a' />
+			</section>
+		</HomeCont>
 	)
 }
 
-export const Reductor = styled.div`
-	width: 100%;
-	height: 100vh;
-	display: grid;
-	grid-template-columns: 25% 75% ;
-	/* position: relative; */
-	nav{
-		/* background-color:#cc1 ; */
-	}
-	aside{
-		/* background-color:#c11 ; */
-	}
-	@media (max-width: 600px) {
-		display:block;
-		/* nav{
-			position: absolute;
-		} */
-	}
-`;
 
 const ImgLogo = styled.img`
 		background-size: cover;
@@ -53,7 +34,7 @@ const ImgLogo = styled.img`
 		height: 100% ;
 	`
 
-export const HomeCont = styled.div`
+const HomeCont = styled.div`
 	display: flex;
 	position: relative;
 	height: 100vh;
@@ -201,4 +182,4 @@ const ButtonRun = styled.div`
 `
 
 
-export default HomePage
+export default HomeLayout
