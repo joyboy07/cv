@@ -4,12 +4,14 @@ import { Outlet } from 'react-router-dom'
 import styled from 'styled-components'
 import MenuComponet from '../../../core/navegation/menu_component'
 import { colorPrimary, colorWhite } from '../../../core/theme/color'
-import { getDataAction } from '../../../general/redux/general_action'
+import { getCertificateAction, getDataAction, getPortafolioAction } from '../../../general/redux/general_action'
 
 const HomePage =() => {
 	const dispatch = useDispatch()
 	useEffect(() => {
 		dispatch(getDataAction(''))
+		dispatch(getCertificateAction(''))
+		dispatch(getPortafolioAction())
 	}, [])
 	return (
 		<Reductor>

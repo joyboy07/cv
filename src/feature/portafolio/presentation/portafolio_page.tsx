@@ -1,9 +1,7 @@
-import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import Lineas from '../../../app/component/lineas'
 import { colorWhite } from '../../../core/theme/color'
-import { getPortafolioAction } from '../../../general/redux/general_action'
 import portafolioI from '../entities/portafolio_Interface'
 import PortafolioCardCont from './components/portafolio-card'
 
@@ -12,10 +10,10 @@ const ServicePage =() => {
 
 	const portafolios: portafolioI[] = useSelector((state: any) => state.Reducer.portafolios)
 
-	useEffect(() => {
-		dispatch(getPortafolioAction())
+	// useEffect(() => {
+	// 	dispatch(getPortafolioAction())
 
-	}, [])
+	// }, [])
 	
 	return (
 		<ServiceCont>

@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import Lineas from '../../../app/component/lineas'
 import { colorIntermedio, colorWhite } from '../../../core/theme/color'
-import { getCertificateAction, getDataAction } from '../../../general/redux/general_action'
 import certificateI from '../interface/certificate_interface'
 import IEducation from '../interface/education_Interface'
 import CertificateCard from './components/certificate-card'
@@ -22,10 +21,10 @@ const AboutPage =() => {
 			setAge((new Date().getFullYear() - 1996) - 1)
 		}
 	},)
-	useEffect(() => {
-		dispatch(getDataAction(''))
-		dispatch(getCertificateAction(''))
-	}, [])
+	// useEffect(() => {
+	// 	dispatch(getDataAction(''))
+	// 	dispatch(getCertificateAction(''))
+	// }, [])
 
 	return (
 		<AboutCont>
