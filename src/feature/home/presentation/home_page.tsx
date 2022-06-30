@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 import styled from 'styled-components'
 import MenuComponet from '../../../core/navegation/menu_component'
 import { colorPrimary, colorWhite } from '../../../core/theme/color'
-import { getCertificateAction, getDataAction, getPortafolioAction } from '../../../general/redux/general_action'
+import { getCertificateAction, getDataAction, getExperienceWordAction, getPortafolioAction } from '../../../general/redux/general_action'
 
 const HomePage =() => {
 	const dispatch = useDispatch()
@@ -13,6 +13,7 @@ const HomePage =() => {
 		dispatch(getDataAction())
 		dispatch(getCertificateAction())
 		dispatch(getPortafolioAction())
+		dispatch(getExperienceWordAction())
 
 	}, [])
 	return (

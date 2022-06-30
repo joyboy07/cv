@@ -2,8 +2,9 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import certificateI from '../../feature/about/interface/certificate_interface';
 import IEducation from '../../feature/about/interface/education_Interface';
 import portafolioI from '../../feature/portafolio/entities/portafolio_Interface';
-import { getCertificateRemote, getDataRemote, getPortafolioRemote } from '../data/datasource_remote';
-import { GET_CERTIFICATE, GET_EDUCATION, GET_PORTAFOLIO, INYECT_CERTIFICATE, INYECT_EDUCATION, INYECT_PORTAFOLIO } from './general_action';
+import { getCertificateRemote, getDataRemote, getExperienceWordRemote, getPortafolioRemote } from '../data/datasource_remote';
+import experienceWordI from '../interface/experience_word_inteface';
+import { GET_CERTIFICATE, GET_EDUCATION, GET_EXPERIENCE, GET_PORTAFOLIO, INYECT_CERTIFICATE, INYECT_EDUCATION, INYECT_EXPERIENCE, INYECT_PORTAFOLIO } from './general_action';
 
 
 function* getEducation(_:any):any{
@@ -61,9 +62,28 @@ function* getPortafolio(_:any):any{
 	} catch (error) {
 	}
 }
+function* getExperience(_:any):any{
+	var portafolios:experienceWordI[] =[]
+
+	try {
+		var results = yield call(getExperienceWordRemote)
+		results.forEach((docm:any)=>{
+			portafolios.push({
+				id: docm.id,
+				cargo: docm.data().cargo,
+				descripcion: docm.data().descripcion,
+				empresa: docm.data().empresa,
+				data: docm.data().data,
+			})
+		})
+		yield put({type: INYECT_EXPERIENCE, payload:portafolios });
+	} catch (error) {
+	}
+}
 
 export default function* Saga(){
 	yield takeLatest( GET_EDUCATION, getEducation);
 	yield takeLatest( GET_CERTIFICATE, getCertificate);
 	yield takeLatest( GET_PORTAFOLIO, getPortafolio);
+	yield takeLatest( GET_EXPERIENCE, getExperience);
 }

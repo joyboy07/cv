@@ -1,4 +1,5 @@
 import { Document, Image, Page, Text, View } from "@react-pdf/renderer";
+import experienceWordI from "../../../../general/interface/experience_word_inteface";
 import certificateI from "../../../about/interface/certificate_interface";
 import IEducation from "../../../about/interface/education_Interface";
 import portafolioI from "../../../portafolio/entities/portafolio_Interface";
@@ -6,9 +7,7 @@ import portafolioI from "../../../portafolio/entities/portafolio_Interface";
 
 function DocuPdf(poema:any) {
 	return (
-		<Document
-
-		>
+		<Document>
 		<Page
 			size="A4"
 			style={{
@@ -35,25 +34,51 @@ function DocuPdf(poema:any) {
 					<View style={{display: "flex", flexDirection:'row', alignItems:'center', justifyContent:'flex-end',}} >
 						<Text style={{ fontSize: "12px", color:'#0F6BAC' }}>julio.porlles.pardo@gmail.com</Text>
 						<View style={{width:'10px'}}></View>
-						<Image src="https://cdn-icons-png.flaticon.com/512/888/888853.png?w=360" style={{ maxWidth: "20px", maxHeight: "20px" }}/>
+						<Image src="https://cdn-icons-png.flaticon.com/512/888/888853.png?w=360" style={{ maxWidth: "10px", maxHeight: "10px" }}/>
 					</View>
 					<View style={{display: "flex", flexDirection:'row', alignItems:'center', justifyContent:'flex-end'}} >
 						<Text style={{ fontSize: "12px", color:'#0F6BAC' }}>+51 970578887</Text>
 						<View style={{width:'10px'}}></View>
-						<Image src="https://cdn.pixabay.com/photo/2021/05/24/17/07/whatsapp-6279868_1280.png" style={{ maxWidth: "30px", maxHeight: "30px" }}/>
+						<Image src="https://cdn-icons-png.flaticon.com/512/3616/3616453.png" style={{ maxWidth: "10px", maxHeight: "10px" }}/>
 					</View>
 					<View style={{display: "flex", flexDirection:'row', alignItems:'center', justifyContent:'flex-end'}} >
 						<Text style={{ fontSize: "12px", color:'#0F6BAC' }}>https://www.linkedin.com/in/julio-porlles-pardo/</Text>
 						<View style={{width:'10px'}}></View>
-						<Image src="https://cdn-icons-png.flaticon.com/512/174/174857.png" style={{ maxWidth: "20px", maxHeight: "20px" }}/>
+						<Image src="https://cdn-icons-png.flaticon.com/512/174/174857.png" style={{ maxWidth: "10px", maxHeight: "10px" }}/>
 					</View>
 				</View>
 			</View>
 			<View style={{ height:'10px' }}></View>
 			<Text style={{ fontSize: "9px", textAlign:'justify' }}>
-				Egresado de Ingeniería Informática de la Universidad Nacional José Faustino Sánchez Carrión (UNJFSC), siendo parte del tercio superior ocupando los primeros puestos. Experiencia trabajando en y formando equipos de trabajo para desarrollo de software y soluciones de análisis de datos e inteligencia de negocios . Ex-miembro líder de la Comunidad Estudiantil UNJFSC y del Project Management Institute Global y PMI Lima Perú Chapter, organización líder dedicada a estudiar, enseñar y aplicar las buenas prácticas en Dirección de Proyectos. Proactivo, dinámico y orientado al cumplimiento de objetivos.
+				Egresado de Ingeniería Informática de la Universidad Nacional José Faustino Sánchez Carrión (UNJFSC). Experiencia desarrollo de software y soluciones de análisis de datos e inteligencia de negocios . Ex-miembro líder de la Comunidad Estudiantil UNJFSC y del Project Management Institute Global y PMI Lima Perú Chapter, organización líder dedicada a estudiar, enseñar y aplicar las buenas prácticas en Dirección de Proyectos. Proactivo, dinámico y orientado al cumplimiento de objetivos.
 			</Text>
 			<View style={{ height:'10px' }}></View>
+			<View style={{ display: "flex", flexDirection:'row',}}>
+				<View style={{ backgroundColor:'#0F6BAC', borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
+					<Text  style={{ fontSize: "9px", color:'#fff' }}>NestJS</Text>
+				</View>
+				<View  style={{ width:'10px' }} ></View>
+				<View style={{ backgroundColor:'#0F6BAC', borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
+					<Text  style={{ fontSize: "9px", color:'#fff' }}>ReactJS</Text>
+				</View>
+				<View  style={{ width:'10px' }} ></View>
+				<View style={{ backgroundColor:'#0F6BAC', borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
+					<Text  style={{ fontSize: "9px", color:'#fff' }}>Flutter</Text>
+				</View>
+				<View  style={{ width:'10px' }} ></View>
+				<View style={{ backgroundColor:'#0F6BAC', borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
+					<Text  style={{ fontSize: "9px", color:'#fff' }}>Ubuntu</Text>
+				</View>
+				<View  style={{ width:'10px' }} ></View>
+				<View style={{ backgroundColor:'#0F6BAC', borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
+					<Text  style={{ fontSize: "9px", color:'#fff' }}>PostgreSQL</Text>
+				</View>
+				<View  style={{ width:'10px' }} ></View>
+				<View style={{ backgroundColor:'#0F6BAC', borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
+					<Text  style={{ fontSize: "9px", color:'#fff' }}>Firebase</Text>
+				</View>
+			</View>
+			<View style={{ height:'20px' }}></View>
 
 			<View style={{display: "flex",flexDirection:'row'}}>
 				<View style={{ width:'48%' }}>
@@ -62,11 +87,19 @@ function DocuPdf(poema:any) {
 							EXPERIENCIA LABORAL
 						</Text>
 						<View style={{ width:'100%', height:'1px', backgroundColor:'#0F6BAC'}}></View>
-						<View style={{ width:'100%'}}>
+						<View style={{ width:'100%', paddingHorizontal:'10px'}}>
 							{
-									poema.education.map((item:IEducation) => (
-										<Text key={item.id} >{item.name}</Text>
-									))
+								poema.experienceWordIs.map((item:experienceWordI) => (
+									<View key={item.id} style={{ width:'100%', paddingVertical:'10px'}}>
+										<Text  style={{ fontSize: "15px"}} >{ item.cargo }</Text>
+										<View style={{ height:'2px' }}></View>
+										<Text style={{ fontSize: "9px", color:'#0F6BAC'}} >{ item.data }</Text>
+										<View style={{ height:'2px' }}></View>
+										<Text style={{ fontSize: "9px"}} >{ item.empresa}</Text>
+										<View style={{ height:'2px' }}></View>
+										<Text style={{ fontSize: "12px"}} >{ item.descripcion}</Text>
+									</View>
+								))
 							}
 						</View>
 
@@ -81,14 +114,12 @@ function DocuPdf(poema:any) {
 								poema.portafolios.map((item:portafolioI) => (
 									<View key={item.id} style={{ width:'100%', paddingVertical:'10px'}}>
 										<Text  style={{ fontSize: "15px"}} >{ item.title }</Text>
-										<View style={{ height:'5px' }}></View>
-										<View style={{paddingLeft:'10px'}}>
-											<Text style={{ fontSize: "9px", color:'#0F6BAC'}} >{ item.date }</Text>
-											<View style={{ height:'5px' }}></View>
-											<Text style={{ fontSize: "9px"}} >{ item.tecnologies}</Text>
-											<View style={{ height:'5px' }}></View>
-											<Text style={{ fontSize: "12px"}} >{ item.detail}</Text>
-										</View>
+										<View style={{ height:'2px' }}></View>
+										<Text style={{ fontSize: "9px", color:'#0F6BAC'}} >{ item.date }</Text>
+										<View style={{ height:'2px' }}></View>
+										<Text style={{ fontSize: "9px"}} >{ item.tecnologies}</Text>
+										<View style={{ height:'2px' }}></View>
+										<Text style={{ fontSize: "12px", fontWeight:'light'}} >{ item.detail}</Text>
 									</View>
 								))
 							}
@@ -110,12 +141,10 @@ function DocuPdf(poema:any) {
 								poema.education.map((item:IEducation) => (
 									<View key={item.id} style={{ width:'100%', paddingVertical:'10px'}}>
 										<Text  style={{ fontSize: "15px"}} >{ item.name }</Text>
-										<View style={{ height:'5px' }}></View>
-										<View style={{paddingLeft:'10px'}}>
-											<Text style={{ fontSize: "9px", color:'#0F6BAC'}} >{ item.date }</Text>
-											<View style={{ height:'5px' }}></View>
-											<Text style={{ fontSize: "12px"}} >{ item.institucion }</Text>
-										</View>
+										<View style={{ height:'2px' }}></View>
+										<Text style={{ fontSize: "9px", color:'#0F6BAC'}} >{ item.date }</Text>
+										<View style={{ height:'2px' }}></View>
+										<Text style={{ fontSize: "12px"}} >{ item.institucion }</Text>
 									</View>
 								))
 							}
@@ -131,12 +160,10 @@ function DocuPdf(poema:any) {
 								poema.certificaties.map((item:certificateI) => (
 									<View key={item.id} style={{ width:'100%', paddingVertical:'10px'}}>
 										<Text  style={{ fontSize: "15px"}} >{ item.name }</Text>
-										<View style={{ height:'5px' }}></View>
-										<View style={{paddingLeft:'10px'}}>
-											<Text style={{ fontSize: "9px", color:'#0F6BAC'}} >{ item.dateStar }</Text>
-											<View style={{ height:'5px' }}></View>
-											<Text style={{ fontSize: "12px"}} >{ item.organization }</Text>
-										</View>
+										<View style={{ height:'2px' }}></View>
+										<Text style={{ fontSize: "9px", color:'#0F6BAC'}} >{ item.dateStar }</Text>
+										<View style={{ height:'2px' }}></View>
+										<Text style={{ fontSize: "12px"}} >{ item.organization }</Text>
 									</View>
 								))
 							}
