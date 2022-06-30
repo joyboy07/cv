@@ -1,8 +1,10 @@
 import { Document, Image, Page, Text, View } from "@react-pdf/renderer";
+import certificateI from "../../../about/interface/certificate_interface";
+import IEducation from "../../../about/interface/education_Interface";
+import portafolioI from "../../../portafolio/entities/portafolio_Interface";
 
 
-function DocuPdf({ poema }:any) {
-	const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+function DocuPdf(poema:any) {
 	return (
 		<Document
 
@@ -61,9 +63,11 @@ function DocuPdf({ poema }:any) {
 						</Text>
 						<View style={{ width:'100%', height:'1px', backgroundColor:'#0F6BAC'}}></View>
 						<View style={{ width:'100%'}}>
-							<Text style={{ fontSize: "9px", textAlign:'justify' }}>
-								names
-							</Text>
+							{
+									poema.education.map((item:IEducation) => (
+										<Text key={item.id} >{item.name}</Text>
+									))
+							}
 						</View>
 
 					</View>
@@ -72,10 +76,22 @@ function DocuPdf({ poema }:any) {
 							PORTAFOLIO
 						</Text>
 						<View style={{ width:'100%', height:'1px', backgroundColor:'#0F6BAC'}}></View>
-						<View style={{ width:'100%'}}>
-							<Text style={{ fontSize: "9px", textAlign:'justify' }}>
-								names
-							</Text>
+						<View style={{ width:'100%', paddingHorizontal:'10px'}}>
+							{
+								poema.portafolios.map((item:portafolioI) => (
+									<View key={item.id} style={{ width:'100%', paddingVertical:'10px'}}>
+										<Text  style={{ fontSize: "15px"}} >{ item.title }</Text>
+										<View style={{ height:'5px' }}></View>
+										<View style={{paddingLeft:'10px'}}>
+											<Text style={{ fontSize: "9px", color:'#0F6BAC'}} >{ item.date }</Text>
+											<View style={{ height:'5px' }}></View>
+											<Text style={{ fontSize: "12px"}} >{ item.tecnologies}</Text>
+											<View style={{ height:'5px' }}></View>
+											<Text style={{ fontSize: "12px"}} >{ item.detail}</Text>
+										</View>
+									</View>
+								))
+							}
 						</View>
 
 					</View>
@@ -89,12 +105,42 @@ function DocuPdf({ poema }:any) {
 							EDUCACION
 						</Text>
 						<View style={{ width:'100%', height:'1px', backgroundColor:'#0F6BAC'}}></View>
+						<View style={{ width:'100%', paddingHorizontal:'10px'}}>
+							{
+								poema.education.map((item:IEducation) => (
+									<View key={item.id} style={{ width:'100%', paddingVertical:'10px'}}>
+										<Text  style={{ fontSize: "15px"}} >{ item.name }</Text>
+										<View style={{ height:'5px' }}></View>
+										<View style={{paddingLeft:'10px'}}>
+											<Text style={{ fontSize: "9px", color:'#0F6BAC'}} >{ item.date }</Text>
+											<View style={{ height:'5px' }}></View>
+											<Text style={{ fontSize: "12px"}} >{ item.institucion }</Text>
+										</View>
+									</View>
+								))
+							}
+						</View>
 					</View>
 					<View style={{ width:'100%' }}>
 						<Text style={{ fontSize: "15px", textAlign:'justify', color:'#0F6BAC'}}>
 							CERTIFICADOS
 						</Text>
 						<View style={{ width:'100%', height:'1px', backgroundColor:'#0F6BAC'}}></View>
+						<View style={{ width:'100%', paddingHorizontal:'10px'}}>
+							{
+								poema.certificaties.map((item:certificateI) => (
+									<View key={item.id} style={{ width:'100%', paddingVertical:'10px'}}>
+										<Text  style={{ fontSize: "15px"}} >{ item.name }</Text>
+										<View style={{ height:'5px' }}></View>
+										<View style={{paddingLeft:'10px'}}>
+											<Text style={{ fontSize: "9px", color:'#0F6BAC'}} >{ item.dateStar }</Text>
+											<View style={{ height:'5px' }}></View>
+											<Text style={{ fontSize: "12px"}} >{ item.organization }</Text>
+										</View>
+									</View>
+								))
+							}
+						</View>
 					</View>
 				</View>
 			</View>

@@ -1,17 +1,15 @@
 import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import Lineas from '../../../app/component/lineas'
 import { colorIntermedio, colorWhite } from '../../../core/theme/color'
+import IEducation from '../../home/entities/education_Interface'
 import certificateI from '../interface/certificate_interface'
-import IEducation from '../interface/education_Interface'
 import CertificateCard from './components/certificate-card'
 import EducationCard from './components/education-card'
 
 const AboutPage =() => {
 	const [age, setAge] = useState<number>();
-	const dispatch = useDispatch()
-
 	const educations: IEducation[] = useSelector((state: any) => state.Reducer.educations)
 	const certificaties: certificateI[] = useSelector((state: any) => state.Reducer.certificates)
 	useEffect(() => {
@@ -21,10 +19,6 @@ const AboutPage =() => {
 			setAge((new Date().getFullYear() - 1996) - 1)
 		}
 	},)
-	// useEffect(() => {
-	// 	dispatch(getDataAction(''))
-	// 	dispatch(getCertificateAction(''))
-	// }, [])
 
 	return (
 		<AboutCont>

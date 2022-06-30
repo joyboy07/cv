@@ -1,5 +1,5 @@
 import certificateI from "../../feature/about/interface/certificate_interface"
-import IEducation from "../../feature/about/interface/education_Interface"
+import IEducation from "../../feature/home/entities/education_Interface"
 import portafolioI from "../../feature/portafolio/entities/portafolio_Interface"
 import { INYECT_CERTIFICATE, INYECT_EDUCATION, INYECT_PORTAFOLIO } from "./general_action"
 
