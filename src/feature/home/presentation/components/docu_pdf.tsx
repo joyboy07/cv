@@ -85,7 +85,7 @@ function DocuPdf(poema:any) {
 										<View style={{paddingLeft:'10px'}}>
 											<Text style={{ fontSize: "9px", color:'#0F6BAC'}} >{ item.date }</Text>
 											<View style={{ height:'5px' }}></View>
-											<Text style={{ fontSize: "12px"}} >{ item.tecnologies}</Text>
+											<Text style={{ fontSize: "9px"}} >{ item.tecnologies}</Text>
 											<View style={{ height:'5px' }}></View>
 											<Text style={{ fontSize: "12px"}} >{ item.detail}</Text>
 										</View>
