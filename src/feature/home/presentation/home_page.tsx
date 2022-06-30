@@ -8,10 +8,12 @@ import { getCertificateAction, getDataAction, getPortafolioAction } from '../../
 
 const HomePage =() => {
 	const dispatch = useDispatch()
+
 	useEffect(() => {
-		dispatch(getDataAction(''))
-		dispatch(getCertificateAction(''))
+		dispatch(getDataAction())
+		dispatch(getCertificateAction())
 		dispatch(getPortafolioAction())
+
 	}, [])
 	return (
 		<Reductor>

@@ -1,18 +1,10 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { colorPrimary, colorWhite } from '../../../../core/theme/color'
-import { getDataAction } from '../../../../general/redux/general_action'
 
 const HomeLayout =() => {
 
 	const navigate = useNavigate()
-	const dispatch = useDispatch()
-	useEffect(() => {
-		dispatch(getDataAction(''))
-	}, [])
-
 	function pushpdf() {
 		navigate('/pdf')
 	}

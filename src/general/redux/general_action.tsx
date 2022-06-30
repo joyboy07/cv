@@ -7,14 +7,12 @@ export const 	INYECT_EDUCATION = 'INYECT_EDUCATION'
 export const 	INYECT_CERTIFICATE = 'INYECT_CERTIFICATE'
 export const 	INYECT_PORTAFOLIO = 'INYECT_PORTAFOLIO'
 
-export const getDataAction = (payload:any) => ({
+export const getDataAction = () => ({
 	type: GET_EDUCATION,
-	...payload
 })
 
-export const getCertificateAction = (payload:any) => ({
+export const getCertificateAction = () => ({
 	type: GET_CERTIFICATE,
-	...payload
 })
 export const getPortafolioAction = () => ({
 	type: GET_PORTAFOLIO,
