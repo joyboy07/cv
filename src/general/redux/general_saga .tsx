@@ -76,7 +76,7 @@ function* getExperience(_:any):any{
 				data: docm.data().data,
 			})
 		})
-		yield put({type: INYECT_EXPERIENCE, payload:portafolios });
+		yield put({type: INYECT_EXPERIENCE, payload:portafolios.reverse() });
 	} catch (error) {
 	}
 }
