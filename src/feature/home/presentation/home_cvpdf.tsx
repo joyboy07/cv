@@ -14,7 +14,6 @@ const educations: IEducation[] = useSelector((state: any) => state.Reducer.educa
 const certificaties: certificateI[] = useSelector((state: any) => state.Reducer.certificates)
 const portafolios: portafolioI[] = useSelector((state: any) => state.Reducer.portafolios)
 const experienceWordIs: experienceWordI[] = useSelector((state: any) => state.Reducer.experienceWords)
-console.log('data',experienceWordIs)
 
 useEffect(() => {
 	if(educations.length == 0){
