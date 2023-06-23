@@ -53,7 +53,21 @@ function DocuPdf(poema:any) {
 				Egresado de Ingeniería Informática de la Universidad Nacional José Faustino Sánchez Carrión (UNJFSC). Experiencia desarrollo de software. Ex-miembro de la Comunidad Estudiantil UNJFSC y del Project Management Institute Global y PMI Lima Perú Chapter, organización líder dedicada a estudiar, enseñar y aplicar las buenas prácticas en Dirección de Proyectos. Proactivo, dinámico y orientado al cumplimiento de objetivos.
 			</Text>
 			<View style={{ height:'10px' }}></View>
+			<Text style={{ fontSize: "15px", textAlign:'justify', color:'#0F6BAC'}}>
+				HABILIDADES
+			</Text>
+			<View style={{ width:'100%', height:'1px', backgroundColor:'#0F6BAC'}}></View>
+			<View style={{ width:'100%', paddingHorizontal:'10px'}}></View>
+			<View style={{ height:'10px' }}></View>
 			<View style={{ display: "flex", flexDirection:'row',}}>
+				<View style={{ border:'1px solid #0F6BAC', backgroundColor:'#0F6BAC',borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
+					<Text  style={{ fontSize: "9px", color:'#fff' }}>Java</Text>
+				</View>
+				<View  style={{ width:'10px' }} ></View>
+				<View style={{ border:'1px solid #0F6BAC', backgroundColor:'#0F6BAC',borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
+					<Text  style={{ fontSize: "9px", color:'#fff' }}>PHP</Text>
+				</View>
+				<View  style={{ width:'10px' }} ></View>
 				<View style={{ border:'1px solid #0F6BAC', backgroundColor:'#0F6BAC',borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
 					<Text  style={{ fontSize: "9px", color:'#fff' }}>Javascrip</Text>
 				</View>
@@ -61,6 +75,11 @@ function DocuPdf(poema:any) {
 				<View style={{ border:'1px solid #0F6BAC', backgroundColor:'#0F6BAC', borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
 					<Text  style={{ fontSize: "9px", color:'#fff' }}>Dart</Text>
 				</View>
+				<View  style={{ width:'10px' }} ></View>
+				<View style={{ border:'1px solid #0F6BAC', backgroundColor:'#0F6BAC',borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
+					<Text  style={{ fontSize: "9px", color:'#fff' }}>Nodejs</Text>
+				</View>
+				<View  style={{ width:'10px' }} ></View>
 				<View  style={{ width:'10px' }} ></View>
 				<View style={{ border:'1px solid #0F6BAC', backgroundColor:'#0F6BAC',borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
 					<Text  style={{ fontSize: "9px", color:'#fff' }}>Flutter</Text>
@@ -78,6 +97,10 @@ function DocuPdf(poema:any) {
 				<View style={{ border:'1px solid #0F6BAC', backgroundColor:'#0F6BAC',borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
 					<Text  style={{ fontSize: "9px", color:'#fff' }}>Firebase</Text>
 				</View>
+				<View  style={{ width:'10px' }} ></View>
+				<View style={{ border:'1px solid #0F6BAC', backgroundColor:'#0F6BAC',borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
+					<Text  style={{ fontSize: "9px", color:'#fff' }}>Mongo DB</Text>
+				</View>
 			</View>
 			<View style={{ height:'20px' }}></View>
 
@@ -92,13 +115,13 @@ function DocuPdf(poema:any) {
 							{
 								poema.experienceWordIs.map((item:experienceWordI) => (
 									<View key={item.id} style={{ width:'100%', paddingVertical:'10px'}}>
-										<Text  style={{ fontSize: "15px"}} >{ item.cargo }</Text>
+										<Text style={{ fontSize: "12px"}} >{ item.empresa}</Text>
 										<View style={{ height:'2px' }}></View>
 										<Text style={{ fontSize: "9px", color:'#0F6BAC'}} >{ item.data }</Text>
 										<View style={{ height:'2px' }}></View>
-										<Text style={{ fontSize: "9px"}} >{ item.empresa}</Text>
+										<Text  style={{ fontSize: "9px"}} >Cargo { item.cargo }</Text>
 										<View style={{ height:'2px' }}></View>
-										<Text style={{ fontSize: "12px"}} >{ item.descripcion}</Text>
+										<Text style={{ fontSize: "12px", color:'#646464'}} >{ item.descripcion}</Text>
 									</View>
 								))
 							}
@@ -120,7 +143,7 @@ function DocuPdf(poema:any) {
 										<View style={{ height:'2px' }}></View>
 										<Text style={{ fontSize: "9px"}} >{ item.tecnologies}</Text>
 										<View style={{ height:'2px' }}></View>
-										<Text style={{ fontSize: "12px", fontWeight:'light'}} >{ item.detail}</Text>
+										<Text style={{ fontSize: "12px",fontWeight:'light'}} >{ item.detail}</Text>
 									</View>
 								))
 							}
@@ -168,6 +191,32 @@ function DocuPdf(poema:any) {
 									</View>
 								))
 							}
+						</View>
+					</View>
+					<View style={{ width:'100%' }}>
+						<Text style={{ fontSize: "15px", textAlign:'justify', color:'#0F6BAC'}}>
+							REFERENCIAS
+						</Text>
+						<View style={{ width:'100%', height:'1px', backgroundColor:'#0F6BAC'}}></View>
+						<View style={{ width:'100%', paddingHorizontal:'10px'}}>
+							<View style={{ width:'100%', paddingVertical:'10px'}}>
+								<Text  style={{ fontSize: "12px"}}> Jose Luis Villanueva De Los Santos</Text>
+								<View style={{ height:'2px' }}></View>
+								<Text style={{ fontSize: "9px",}} >Cargo: Jefe De La Oficina de Ingeniería Informática </Text>
+								<View style={{ height:'2px' }}></View>
+								<Text style={{ fontSize: "9px"}} >Empresa: Corte Superior De Justicia De Huaura </Text>
+								<View style={{ height:'2px' }}></View>
+								<Text style={{ fontSize: "9px"}} >Número: 989 116 807</Text>
+							</View>
+							<View style={{ width:'100%', paddingVertical:'10px'}}>
+								<Text  style={{ fontSize: "12px"}}> Maritza Yuliza Lopez Flores</Text>
+								<View style={{ height:'2px' }}></View>
+								<Text style={{ fontSize: "9px",}} >Cargo: Developed Mobile </Text>
+								<View style={{ height:'2px' }}></View>
+								<Text style={{ fontSize: "9px"}} >Empresa: Sempiterno </Text>
+								<View style={{ height:'2px' }}></View>
+								<Text style={{ fontSize: "9px"}} >Número: 925 535 975</Text>
+							</View>
 						</View>
 					</View>
 				</View>
