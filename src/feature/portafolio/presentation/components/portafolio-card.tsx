@@ -52,11 +52,3 @@ const PortafolioCardCont = styled.div`
 		}
 	}
 `
-const ImgCont = styled.img`
-	width: 100%;
-	height: 400px;
-	border-radius: 10px ;
-	@media (max-width: 600px) {
-		height: 150px;
-	}
-`

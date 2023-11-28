@@ -1,14 +1,30 @@
+# Run proyect
+
+```bash
+# Corremos el proyecto
+
+npm run start
+```
 # Subir el proyecto a firebase
 
 ## Paso 1
 
 Ejecutamos el comando
 
-### `npm run build`
+```bash
+# Creamos el build del aplicativo con el siguiente comando
+
+npm run build
+```
 
 ## Paso 2
 
-Ejecutamos el siguiente comadno
-### `Firebase deploy`
+
+
+```bash
+# Subimos el aplicativo al firebase con el siguiente comando
+
+Firebase deploy
+```
 
 y con eso estariamos subiedo el aplicativo.

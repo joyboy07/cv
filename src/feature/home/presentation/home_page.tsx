@@ -15,7 +15,7 @@ const HomePage =() => {
 		dispatch(getPortafolioAction())
 		dispatch(getExperienceWordAction())
 
-	}, [])
+	}, [dispatch])
 	return (
 		<Reductor>
 				<nav>
@@ -37,14 +37,6 @@ export const Reductor = styled.div`
 		display:block;
 	}
 `;
-
-const ImgLogo = styled.img`
-		background-size: cover;
-		border-radius: 10px;
-		border: none;
-		width: 100%;
-		height: 100% ;
-	`
 
 export const HomeCont = styled.div`
 	display: flex;
@@ -134,62 +126,6 @@ export const HomeCont = styled.div`
 export const Buttons = styled.div`
 	display: flex ;
 	gap:15px;
-
-`
-
-const ButtonRun = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	overflow: hidden;
-	border-radius: 10px;
-	padding: 0px 15px ;
-	height: 50px ;
-	cursor: pointer ;
-	::before{
-		content: '';
-		position: absolute;
-		width: 30px;
-		height: 250%;
-		background: linear-gradient(#DAA622 , #0A52BF );
-		animation: movers;
-		animation-duration: 4s;
-		animation-iteration-count: infinite;
-		animation-timing-function: ease;
-
-	}
-	@keyframes movers{
-		0%{
-			transform: rotate(0deg);
-		}
-		100%{
-			transform: rotate(360deg);
-		}
-	}
-	::after{
-		content: '';
-		position: absolute;
-		inset: 3px;
-		background: #fff;
-		border-radius: 30px;
-	}
-	p{
-		position: relative;
-		color: ${colorPrimary};
-		/* font-size:10px; */
-		font-weight: 600;
-		z-index: 10;
-		padding: 10px;
-	}
-
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-
 
 `
 

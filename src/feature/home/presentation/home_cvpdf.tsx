@@ -16,17 +16,17 @@ const portafolios: portafolioI[] = useSelector((state: any) => state.Reducer.por
 const experienceWordIs: experienceWordI[] = useSelector((state: any) => state.Reducer.experienceWords)
 
 useEffect(() => {
-	if(educations.length == 0){
+	if(educations.length === 0){
 		dispatch(getDataAction())
 		dispatch(getCertificateAction())
 		dispatch(getPortafolioAction())
 		dispatch(getExperienceWordAction())
 	}
-}, [])
+}, [dispatch,educations.length])
 
 return (
-		<PDFViewer style={{ width: "100%", height: "100vh" }}>
-			<DocuPdf education={educations} certificaties={certificaties} portafolios={portafolios} experienceWordIs={experienceWordIs} />
+		<PDFViewer  style={{ width: "100%", height: "100vh" }} >
+			<DocuPdf  education={educations} certificaties={certificaties} portafolios={portafolios} experienceWordIs={experienceWordIs} />
 		</PDFViewer>
 	)
 }

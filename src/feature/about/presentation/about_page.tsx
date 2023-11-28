@@ -18,7 +18,7 @@ const AboutPage =() => {
 		}else{
 			setAge((new Date().getFullYear() - 1996) - 1)
 		}
-	},)
+	},[setAge])
 
 	return (
 		<AboutCont>

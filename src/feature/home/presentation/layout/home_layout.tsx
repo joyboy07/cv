@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import { colorPrimary, colorWhite } from '../../../../core/theme/color'
+import { colorBackgroud, colorPrimary, colorWhite } from '../../../../core/theme/color'
 
 const HomeLayout =() => {
 
@@ -11,10 +11,21 @@ const HomeLayout =() => {
 	return (
 		<HomeCont>
 			<section>
-				<h1 >Hola soy <span>Julio </span></h1>
-				<h2>Un <span>Full Stack Developer jr</span> y me gusta realizar sistemas que ayuden a las personas en sus actividades y también me gusta estar aprendiendo nuevas cosas.</h2>
+				<h1 >¡Hola, Soy <span>Julio</span>!</h1>
+				<h2 >Desarrollador Full Stack | Apasionado por la Innovación Tecnológica</h2>
+				<h3>Un <span>Full Stack Developer </span> y me gusta realizar sistemas que ayuden a las personas en sus actividades y también me gusta estar aprendiendo nuevas cosas.</h3>
+				<h2 >Lo Que Ofrezco:</h2>
+				<ul>
+					<li>Desarrollador Full Stack Jr con enfoque en la innovación.</li>
+					<li>Educación sólida y certificaciones respaldando mi experiencia.</li>
+					<li>Descarga mi CV en PDF y explora mi portafolio para ver mis proyectos.</li>
+				</ul>
+				<h2>Mi Misión:</h2>
+				<h3>Creo en el poder de la tecnología para mejorar nuestras vidas. Cada línea de código que escribo tiene un propósito: facilitar las actividades diarias y contribuir a un mundo más conectado.</h3>
+				<h2>Acompáñame en mi Viaje:</h2>
+				<h3>Descubre no solo mis habilidades técnicas sino también mi dedicación al aprendizaje continuo. ¡Bienvenido a mi viaje de desarrollo!</h3>
 				<Buttons >
-					<ButtonRun onClick={pushpdf}><p>CV Descargar</p></ButtonRun>
+					<ButtonRun onClick={pushpdf}><p>Descargar CV</p></ButtonRun>
 				</Buttons>
 			</section>
 			<section>
@@ -43,7 +54,7 @@ const HomeCont = styled.div`
 	section{
 		:nth-child(1){
 			height:100%;
-			width: 100%;
+			width: 80%;
 			display:flex;
 			flex-direction: column;
 			justify-content: center;
@@ -69,11 +80,16 @@ const HomeCont = styled.div`
 				}
 			}
 			h2{
+				color: ${colorBackgroud};
+				text-align: justify ;
+				font-weight: 900;
+			}
+			h3{
 				text-align: justify ;
 				span{
 					animation: h1Animate;
 					animation-duration: 1s;
-					color: ${colorPrimary};
+					color: ${colorBackgroud};
 					font-family: 'Shadows Into Light', cursive;
 				}
 			}

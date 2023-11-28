@@ -41,8 +41,8 @@ const MenuComponet = () => {
         <ul className={  clicked ? 'activelo ' : 'desactivelo'} >
             {
                 listMenu.map((item: menuI) => (
-                    <li key={item.name}  className={  menu == item.ruta ? 'active ' : 'desactive'} onClick={() => changeMenu(item.ruta)} >
-                        <a>{item.name}</a>
+                    <li key={item.name}  className={  menu === item.ruta ? 'active ' : 'desactive'} onClick={() => changeMenu(item.ruta)} >
+                        <div >{item.name}</div>
                     </li>
                 ))
             }
@@ -65,7 +65,7 @@ const MenuCont = styled.div`
             overflow: hidden;
             li{
                 list-style: none ;
-                a{
+                div{
                     font-size:30px ;
                     font-weight: bold ;
                     color:${colorWhite} ;
@@ -132,7 +132,7 @@ const MenuCont = styled.div`
                 background: ${colorIntermedio} ;
                 padding: 25px ;
                 cursor: pointer;
-                a{
+                div{
                     text-decoration: none;
                     color: #999;
                     z-index: 11 ;

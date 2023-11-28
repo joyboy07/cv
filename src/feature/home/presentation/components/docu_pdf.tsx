@@ -1,4 +1,5 @@
 import { Document, Image, Page, Text, View } from "@react-pdf/renderer";
+import { useRef } from "react";
 import experienceWordI from "../../../../general/interface/experience_word_inteface";
 import certificateI from "../../../about/interface/certificate_interface";
 import IEducation from "../../../about/interface/education_Interface";
@@ -6,8 +7,10 @@ import portafolioI from "../../../portafolio/entities/portafolio_Interface";
 
 
 function DocuPdf(poema:any) {
+
+
 	return (
-		<Document>
+		<Document title="Julio Porlles Pardo CV" >
 		<Page
 			size="A4"
 			style={{
@@ -65,10 +68,6 @@ function DocuPdf(poema:any) {
 				</View>
 				<View  style={{ width:'10px' }} ></View>
 				<View style={{ border:'1px solid #0F6BAC', backgroundColor:'#0F6BAC',borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
-					<Text  style={{ fontSize: "9px", color:'#fff' }}>PHP</Text>
-				</View>
-				<View  style={{ width:'10px' }} ></View>
-				<View style={{ border:'1px solid #0F6BAC', backgroundColor:'#0F6BAC',borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
 					<Text  style={{ fontSize: "9px", color:'#fff' }}>Javascrip</Text>
 				</View>
 				<View  style={{ width:'10px' }} ></View>
@@ -97,10 +96,7 @@ function DocuPdf(poema:any) {
 				<View style={{ border:'1px solid #0F6BAC', backgroundColor:'#0F6BAC',borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
 					<Text  style={{ fontSize: "9px", color:'#fff' }}>Firebase</Text>
 				</View>
-				<View  style={{ width:'10px' }} ></View>
-				<View style={{ border:'1px solid #0F6BAC', backgroundColor:'#0F6BAC',borderRadius:'50%', width:'40px', height:'40px', display: "flex", justifyContent:'center', alignItems:'center' }}>
-					<Text  style={{ fontSize: "9px", color:'#fff' }}>Mongo DB</Text>
-				</View>
+				
 			</View>
 			<View style={{ height:'20px' }}></View>
 
